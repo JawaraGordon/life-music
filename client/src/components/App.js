@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
+// import Login from './Login';
+import Header from './Header';
+import NavBar from './NavBar';
+import Home from '../pages/Home';
+import About from '../pages/About';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import CardMedia from '@mui/material/CardMedia';
 import ReactAudioPlayer from 'react-audio-player';
+import Chill from '../playlists/Chill'
 
 function App() {
   // add state for songs player
   const [songs, setSongs] = useState([]);
-  
-  // const [
-    //   id,
-    //   album_img,
-    //   artist,
-    //   bpm,
-    //   key_of_song,
-    //   length,
-    //   mood_rank,
-    //   song_url,
-    //   title,
-    // ] = songs;
+  const [user, setUser] = useState([]);
     
     // create function that fetches music from database by mood number
     
@@ -31,70 +26,29 @@ function App() {
       });
     }, []);
     
-  // randomly sort array or songs  
-  const randomSongs = songs.sort(() => Math.random() - 0.5)
-
-// filter song names
-  const filteredSongNames = randomSongs
-    .map((song) => song.title)
-    .filter(
-      (title, index, name) => name.indexOf(title) === index
-    )
-  
-  // map song URLs
-  const songUrl = randomSongs.map((song) => {
-    return song.song_url
-    // return {url: song.song_url, title: song.title}
-  })
-
-  // map song images
-  const songImg = randomSongs.map((song) => {
-    return song.album_img
-    // return {url: song.song_url, title: song.title}
-  })
-
-  console.log("filtered songs", filteredSongNames)
-  console.log("song urls", songUrl)
-  console.log("album img", songImg)
+ 
 
   return (
     <>
-      <Container maxWidth="md" style={{ backgroundColor: '#000000' }}>
-        <Box m={2} pt={3} pb={3}>
-          <Container maxWidth="sm" style={{ backgroundColor: '#cfe8fc' }}>
-            <h1>Chill Playlist</h1>
+    <Header/>
+  <NavBar user={user} setUser={setUser} />
+      <Switch>
+        <Route exact path="/">
+          <Home key={songs.id} songs={songs}/>
+        </Route>
+        <Route exact path="/about">
+          <About/>
+        </Route>
+        {/* <Route path="/login">
+          <Login />
+        </Route> */}
+        {/* <Route path="/chill"> */}
+        {/* <Chill songs={songs}/> */}
+        {/* </Route> */}
+      </Switch>
 
-            <Button variant="contained">Life Music</Button>
-            <figure>
-              
-              <div>
-                <img src={songImg[0]} className="song-img"/>
-              </div>
-              
-              <figcaption>{filteredSongNames[0]}</figcaption>
-              <ReactAudioPlayer src={songUrl[0]} controls maxWidth="sm"/>
-              {/* <ReactAudioPlayer src={sortedSongs[0].url} controls /> */}
-            </figure>
-            <figure>
-              <figcaption>{filteredSongNames[1]}</figcaption>
-              <ReactAudioPlayer src={songUrl[1]} controls />
-              {/* <ReactAudioPlayer src={sortedSongs[1]} controls /> */}
-            </figure>
-            <figure>
-              <figcaption>{filteredSongNames[2]}</figcaption>
-              <ReactAudioPlayer src={songUrl[2]} controls />
-              {/* <ReactAudioPlayer src={sortedSongs[2]} controls /> */}
-            </figure>
-            <figure>
-              <figcaption>{filteredSongNames[3]}</figcaption>
-              <ReactAudioPlayer src={songUrl[3]} controls />
-              {/* <ReactAudioPlayer src={sortedSongs[3]} controls /> */}
-            </figure>
-            <hr></hr>
 
-          </Container>
-        </Box>
-      </Container>
+      
     </>
   );
 }
