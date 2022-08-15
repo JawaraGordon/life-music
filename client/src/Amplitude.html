@@ -1,0 +1,69 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+ 
+  
+  <link rel="stylesheet" href="css/foundation.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/app.css"/>
+  <script type="text/javascript" src="js/amplitude.js"></script>
+  <!-- Amplitude.js Foundation and JQuery -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/foundation.min.js"></script>
+  <!-- Amplitude.js UX functions -->
+  <script type="text/javascript" src="js/functions.js"></script>
+
+  <body>
+    <div class="grid-x grid-padding-x">
+    <div class="large-12 medium-12 small-12 cell">
+    </div>
+  </div>
+  <div id="single-song-player">
+  </div>
+  <img amplitude-song-info="cover_art_url" amplitude-main-song-info="true"/>
+  <div id="single-song-player">
+    <img amplitude-song-info="cover_art_url" amplitude-main-song-info="true"/>
+  </div>
+  <div class="bottom-container">
+    <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>
+</div>
+<div class="time-container">
+  <span class="current-time">
+    <span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+  </span>
+  <span class="duration">
+    <span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+  </span>
+</div>
+<div class="control-container">
+  <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
+</div>
+<div class="meta-container">
+  <span amplitude-song-info="name" amplitude-main-song-info="true" class="song-name"></span>
+  <span amplitude-song-info="artist" amplitude-main-song-info="true"></span>
+</div>
+
+  </body>
+</html>
+
+
+<script>
+  Amplitude.init({
+    "songs": [
+      {
+        "name": "Risin' High (feat Raashan Ahmad)",
+        "artist": "Ancient Astronauts",
+        "album": "We Are to Answer",
+        "url": "../songs/Ancient Astronauts - Risin' High (feat Raashan Ahmad).mp3",
+        "cover_art_url": "../album-art/we-are-to-answer.jpg"
+      }
+    ]
+  });
+</script>
+
