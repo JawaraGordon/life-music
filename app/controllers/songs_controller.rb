@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-
+    skip_before_action :authorize, only: [:create, :index, :destroy]
     def create
         song = Song.create(song_params)
         render json: song, status: :created

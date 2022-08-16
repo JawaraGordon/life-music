@@ -16,7 +16,17 @@ function App() {
   const [songs, setSongs] = useState([]);
   const [user, setUser] = useState([]);
     
-    // create function that fetches music from database by mood number
+    // create function that fetches users from database
+    
+    useEffect(() => {
+      fetch('/users').then((resp) => {
+        if (resp.ok) {
+          resp.json().then((user) => setUser(user));
+        }
+      });
+    }, []);
+
+    // create function that fetches music from database
     
     useEffect(() => {
       fetch('/songs').then((resp) => {
@@ -27,6 +37,7 @@ function App() {
     }, []);
     
  
+    if (!songs.length) return <div>Loading...</div>;
 
   return (
     <>
@@ -34,7 +45,7 @@ function App() {
   <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route exact path="/">
-          <Home key={songs.id} songs={songs}/>
+          <Home  songs={songs} user={user}/>
         </Route>
         <Route exact path="/about">
           <About/>
@@ -42,13 +53,7 @@ function App() {
         {/* <Route path="/login">
           <Login />
         </Route> */}
-        {/* <Route path="/chill"> */}
-        {/* <Chill songs={songs}/> */}
-        {/* </Route> */}
       </Switch>
-
-
-      
     </>
   );
 }
