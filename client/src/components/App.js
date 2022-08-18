@@ -8,6 +8,7 @@ import Home from '../pages/Home';
 import Chill from '../playlists/SongList';
 import songList from '../pages/Home';
 import About from '../pages/About';
+import Account from '../pages/Account';
 
 
 function App() {
@@ -141,10 +142,7 @@ function App() {
   <NavBar user={user} setUser={setUser} />
   <MoodBar user={user} setUser={setUser} handleChillClick={handleChillClick} handleExcitedClick={handleExcitedClick} handleFocusedClick={handleFocusedClick} handleSadClick={handleSadClick} handleHappyClick={handleHappyClick}/>
       <Switch>
-      <Route path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/home">
+        <Route path="/home">
           <Home  
           songs={songs} 
           user={user} 
@@ -153,8 +151,14 @@ function App() {
           currentMood={currentMood} 
           setCurrentMood={setCurrentMood}/>
         </Route>
+      <Route path="/login">
+          <Login />
+        </Route>
         <Route path="/about">
           <About/>
+        </Route>
+        <Route path="/account">
+          <Account user={user} setUser={setUser}/>
         </Route>
       </Switch>
     </>
