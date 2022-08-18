@@ -14,7 +14,7 @@ function Header({ setUser }) {
     <>
       <div className="header">
         <div className="header-img">
-          <a className="header-img" href="/">
+          <a className="header-img" href="/home">
             <img src={LifeMusicLogo} alt="logo" />
           </a>
         </div>
