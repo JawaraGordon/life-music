@@ -4,7 +4,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import ReactAudioPlayer from 'react-audio-player';
 
-function Chill({ songs }) {
+function SongList({ songs }) {
   // const [
   //   id,
   //   album_img,
@@ -16,6 +16,9 @@ function Chill({ songs }) {
   //   song_url,
   //   title,
   // ] = songs;
+
+console.log("songList songs", songs)
+
 
   const randomSongsAlbumImg = songs.album_img
 
@@ -56,15 +59,11 @@ function Chill({ songs }) {
 
   // console.log("filtered songs", filteredSongNames)
   // console.log("song urls", songUrl)
-  console.log("album img", songImg)
+  // console.log("album img", songImg)
   // console.log('random songs', randomSongs);
-
+  // setTimeout(() => {<SongList songs={songList} />},1000)
   return (
     <>
-      {/* <Container maxWidth="sm" style={{ backgroundColor: '#000000' }}> */}
-
-      {/* <div className="card"> */}
-      <h2>Chill Playlist</h2>
       <img src={songImg[0]} className="song-img" />
 
       {songPlayer}
@@ -74,13 +73,9 @@ function Chill({ songs }) {
       <Box m={2}>
         <Button variant="contained">Edit</Button>
       </Box>
-      <hr></hr>
-
-      {/* </div> */}
-
-      {/* </Container> */}
+      
     </>
   );
 }
 
-export default Chill;
+export default SongList;

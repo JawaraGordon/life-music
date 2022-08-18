@@ -7,22 +7,22 @@ function NavBar({ user, setUser }) {
   return (
     <>
       <div className="navbar">
-      <NavLink exact to="/">
+      <NavLink to="/home">
         <button className="nav-btn">
           <h3>Home</h3>
         </button>
       </NavLink>
-      <NavLink exact to="/about">
+      <NavLink to="/about">
         <button className="nav-btn">
           <h3>About</h3>
         </button>
       </NavLink>
-      <NavLink exact to="/playlists">
+      <NavLink to="/playlists">
         <button className="nav-btn">
           <h3>My Playlists</h3>
         </button>
       </NavLink>
-      <NavLink exact to="/account">
+      <NavLink to="/account">
         <button className="nav-btn">
           <h3>Account</h3>
         </button>

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
     skip_before_action :authorize, only: [:create, :index, :destroy]
 
     def create
@@ -9,28 +8,33 @@ class UsersController < ApplicationController
     end
 
     def index
-        user = User.all
-        render json: user, status: :ok
+      users = User.all
+        render json: users
+    end
+  
+    def show
+      render json: @current_user
     end
 
-        def show 
-            users = User.find(params[:id])
-            render json: users, status: :ok
-        end
-        
+    def update
+      user = User.find(params[:id])
+      user.update!(user_params)
+      render json: user
+    rescue ActiveRecord::RecordInvalid => invalid
+      render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+    end
 
     def destroy
-        users = User.find(params[:id])
-         users.destroy
-         head :no_content
+       user = User.find(params[:id])
+        user.destroy
+        head :no_content
     end
 
-
-    private 
-
+  
+    private
+  
     def user_params
-        params.permit(:username, :email, :password, :image_url, :bio, :age, :location)
-    
+      params.permit(:username, :password, :password_confirmation, :image_url, :bio, :age)
     end
 
 end

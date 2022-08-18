@@ -1,0 +1,82 @@
+import React, { useState } from "react";
+import Button from '@mui/material/Button';
+import FormLabel from '@mui/material/FormLabel';
+import { Link } from 'react-router-dom';
+import LifeMusicLogin from '../img/LifeMusicLogin.png'
+
+function LoginForm({ setUser }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setIsLoading(true);
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    }).then((resp) => {
+      setIsLoading(false);
+      if (resp.ok) {
+        resp.json().then((user) => setUser(user));
+      } else {
+        resp.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
+
+  return (
+    <>
+    <div className="login-container">
+    <div className="login-img">
+    <img src={LifeMusicLogin}/>
+    </div>
+      <div className="login-form">
+    <form onSubmit={handleSubmit}>
+      <div>
+        <FormLabel htmlFor="username">Username</FormLabel>
+        <input className="input"
+          type="text"
+          id="username"
+          autoComplete="off"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+      <div>
+        <FormLabel htmlFor="password">Password</FormLabel>
+        <input className="input"
+          type="password"
+          id="password"
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <div>
+        <Button className="header-btn" variant="contained" color="secondary" type="submit">
+           Login
+        </Button>
+        {/* sends user to guest experience */}
+        {/* <Link to="/guest" className="link-secondary" onClick={() => {}}>
+              Guest
+            </Link> */}
+      </div>
+      {/* maps styled error message */}
+      {/* <div>
+        {errors.map((err) => (
+          <Error key={err}>{err}</Error>
+        ))}
+      </div> */}
+    </form>
+    </div>
+    </div>
+    </>
+  );
+}
+
+export default LoginForm;
