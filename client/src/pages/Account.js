@@ -6,13 +6,15 @@ import { useHistory } from 'react-router-dom';
 
 function Account({ user, setUser, onLogin }) {
   const [formData, setFormData] = useState({
-    id: ' ',
+    id: '',
     username: '',
     image_url: '',
     bio: '',
     age: '',
   });
   const history = useHistory();
+
+  // console.log("account user", user);
 
   useEffect(() => {
     fetch(`/user/${user.id}`)
@@ -51,6 +53,10 @@ function Account({ user, setUser, onLogin }) {
     setUser(updatedUser);
   }
 
+  function pushToHome() {
+    history.push('/home');
+  }
+
   
 
   return (
@@ -59,7 +65,7 @@ function Account({ user, setUser, onLogin }) {
         <form autoComplete="off" onSubmit={handleUpdate}>
           <h3>Edit Your Info</h3>
           <FormLabel htmlFor="name">Username</FormLabel>
-          <field>
+          <div>
             <input
               className="input-text"
               type="text"
@@ -68,10 +74,10 @@ function Account({ user, setUser, onLogin }) {
               value={formData.username}
               onChange={handleChange}
             />
-          </field>
+          </div>
 
           <FormLabel htmlFor="image_url">Image Url</FormLabel>
-          <field>
+          <div>
             <input
               className="input-text"
               id="image_url"
@@ -79,9 +85,9 @@ function Account({ user, setUser, onLogin }) {
               value={formData.image_url}
               onChange={handleChange}
             />
-          </field>
+          </div>
           <FormLabel htmlFor="bio">Bio</FormLabel>
-          <field>
+          <div>
             <input
               className="input-text"
               type="text"
@@ -90,9 +96,9 @@ function Account({ user, setUser, onLogin }) {
               value={formData.bio}
               onChange={handleChange}
             />
-          </field>
+          </div>
           <FormLabel htmlFor="bio">Age</FormLabel>
-          <field>
+          <div>
             <input
               className="input-text"
               type="number"
@@ -101,7 +107,7 @@ function Account({ user, setUser, onLogin }) {
               value={formData.age}
               onChange={handleChange}
             />
-          </field>
+          </div>
 
           
         </form>
@@ -111,7 +117,7 @@ function Account({ user, setUser, onLogin }) {
           </Button>
           
           
-            <Button className="header-btn" variant="contained" color="secondary" to={'/'}>
+            <Button className="header-btn" variant="contained" color="secondary" onClick={pushToHome}>
               Home
             </Button>
             </div>
