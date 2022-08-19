@@ -11,7 +11,6 @@ function Login({ setUser }) {
     <>
          
       <div className="logo-small">
-            {/* <img src={LifeMusicLogo} alt="logo" /> */}
           </div>
       {showLogin ? (
         <>

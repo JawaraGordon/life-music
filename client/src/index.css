@@ -29,10 +29,16 @@ body {
   color: #fff;
 }
 
-.login-container img {
+.login-img {
   height: auto;
   width: 100%;
-  margin-bottom: .5rem;
+}
+
+.login-container img{
+  justify-content: center;
+  width: 100%;
+  background-size: contain; 
+  
 }
 
 .login-container a{

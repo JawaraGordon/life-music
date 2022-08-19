@@ -15,7 +15,7 @@ import MyPlayLists from '../pages/MyPlayLists';
 function App() {
   // add state for songs player
   const [songs, setSongs] = useState([]);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
   const [isShown, setIsShown] = useState(false);
   const [currentMood, setCurrentMood] = useState([]);
   const [songList, setSongList] = useState([]);
@@ -130,8 +130,11 @@ function App() {
   //  console.log("home" , currentMood)
   //  console.log("app songlist" , songList)
 
-    
-    if (!user) return <Login setUser={setUser} />;
+    console.log("user",user)
+    // if (!user) return <Login  />;
+    if (!user) return <Route path="/login">
+      <Login setUser={setUser}/>
+  </Route>;
 
     // if (!songs.length) return <div><h2>Loading...</h2></div>;
   //  console.log("app user", user)
@@ -139,14 +142,13 @@ function App() {
 
   return (
     <>
-    <Header setUser={setUser}/>
+  <Header setUser={setUser}/>
   <NavBar user={user} setUser={setUser} />
   <MoodBar user={user} setUser={setUser} handleChillClick={handleChillClick} handleExcitedClick={handleExcitedClick} handleFocusedClick={handleFocusedClick} handleSadClick={handleSadClick} handleHappyClick={handleHappyClick}/>
+      
       <Switch>
-      <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/home">
+      
+        <Route exact path="/">
           <Home  
           songs={songs} 
           user={user} 

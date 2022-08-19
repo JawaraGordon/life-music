@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function NavBar({ user, setUser }) {
+function NavBar() {
 
 
   return (
     <>
       <div className="navbar">
-      <NavLink to="/home">
+      <NavLink to="/">
         <button className="nav-btn">
           <h3>Home</h3>
         </button>

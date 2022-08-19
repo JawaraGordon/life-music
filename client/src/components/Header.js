@@ -1,11 +1,16 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom'
 import LifeMusicLogo from '../img/LifeMusicLogo.png';
 
 function Header({ setUser }) {
+
+const history = useHistory()
+
   function handleLogoutClick() {
     fetch('/logout', { method: 'DELETE' }).then((r) => {
       if (r.ok) {
         setUser(null);
+        history.push('/login');
       }
     });
   }

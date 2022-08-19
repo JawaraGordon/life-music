@@ -13,8 +13,12 @@ class UsersController < ApplicationController
     end
   
     def show
-      render json: @current_user
-    end
+      if current_user
+          render json: current_user, status: :ok
+      else
+          render json: { error: "No current user, please login"}, status: :unauthorized
+      end
+  end
 
     def update
       user = User.find(params[:id])
