@@ -290,14 +290,26 @@ button {
 .playlists-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* margin: 2rem;
-  padding: 2rem; */
-  /* justify-content: center; */
+  justify-content: center;
   background-color: #000;
-  /* width: auto; */
+
+}
+.song-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
 }
 
-/* @media only screen and (min-width: 1200) {
+.song-player {
+  display: flex;
+  justify-items: center;
+  width: 15rem;
+
+
+}
+
+@media only screen and (min-width: 1000) {
   .login-container {
   flex-direction: column;
   justify-content: space-between;
@@ -305,4 +317,4 @@ button {
   height: 100%;
   overflow: hidden;
   }
-} */
+}

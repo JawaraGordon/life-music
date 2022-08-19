@@ -5,7 +5,7 @@ import SongList from '../playlists/SongList';
 
 function Home({  user, isShown, songList }) {
  
-  const { username, image_url, bio, location } = user;
+  const { username, image_url, bio, age, location } = user;
 
   
   return (
@@ -14,6 +14,7 @@ function Home({  user, isShown, songList }) {
         <div className="profile">
           <h1>{username}</h1>
           <img src={image_url} className="user-img" />
+          <h3>Age: {age}</h3>
           <h3>{bio}</h3>
           <h3>{location}</h3>
         </div>

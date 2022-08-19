@@ -5,17 +5,8 @@ import Box from '@mui/material/Box';
 import ReactAudioPlayer from 'react-audio-player';
 
 function SongList({ songs }) {
-  // const [
-  //   id,
-  //   album_img,
-  //   artist,
-  //   bpm,
-  //   key_of_song,
-  //   length,
-  //   mood_rank,
-  //   song_url,
-  //   title,
-  // ] = songs;
+
+  const [loaded, setLoaded] = useState(false);
 
 console.log("songList songs", songs)
 
@@ -26,17 +17,22 @@ console.log("songList songs", songs)
   const randomSongs = songs.sort(() => Math.random() - 0.5);
 
 
-  // console.log("rs album img", randomSongsAlbumImg)
+
 
   const songPlayer = randomSongs.map((s) => (
     <figure key={s.id}>
-      <div>
-      {/* <img src={s.album_img} className="song-img" /> */}
-      </div>
+      
       <figcaption>
         <h2>{s.title}</h2>
       </figcaption>
-      <ReactAudioPlayer src={s.song_url} controls maxWidth="sm" />
+      {/* <ReactAudioPlayer src={s.song_url} controls loop maxWidth="sm" /> */}
+      <div className="song-player">
+      <audio controls loop>
+ <source src={s.song_url} type="audio/mpeg;"/>
+ {/* <source src={s.song_url} type="audio/mpeg;"/>
+ <source src={s.song_url} type="audio/mpeg"/> */}
+</audio>
+</div>
     </figure>
   ));
 
@@ -57,22 +53,21 @@ console.log("songList songs", songs)
     // return {url: song.song_url, title: song.title}
   });
 
-  // console.log("filtered songs", filteredSongNames)
-  // console.log("song urls", songUrl)
-  // console.log("album img", songImg)
-  // console.log('random songs', randomSongs);
+
   // setTimeout(() => {<SongList songs={songList} />},1000)
   return (
     <>
       <img src={songImg[0]} className="song-img" />
-
+    
+    <div className="song-container">
       {songPlayer}
       <Box m={2}>
         <Button variant="contained">Save</Button>
       </Box>
-      <Box m={2}>
+      {/* <Box m={2}>
         <Button variant="contained">Edit</Button>
-      </Box>
+      </Box> */}
+      </div>
       
     </>
   );

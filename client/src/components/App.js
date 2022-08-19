@@ -19,6 +19,8 @@ function App() {
   const [isShown, setIsShown] = useState(false);
   const [currentMood, setCurrentMood] = useState([]);
   const [songList, setSongList] = useState([]);
+  
+
     
     // create function that fetches users from database
     
@@ -40,13 +42,11 @@ function App() {
     });
   }, []);
 
-    // create function that fetches music from database
     
     // useEffect(() => {
     //   fetch('/songs').then((resp) => {
     //     if (resp.ok) {
     //       resp.json().then((songs) => setSongs(songs))
-          
     //     }
     //   });
     // }, []);
@@ -55,7 +55,10 @@ function App() {
     setCurrentMood(()=>2)
     fetch('/songs').then((resp) => {
       if (resp.ok) {
-        resp.json().then((songs) => setSongs(songs))
+        resp.json().then((songs) => {
+          
+
+          setSongs(songs)})
         
       }
     });
@@ -126,8 +129,6 @@ function App() {
           setIsShown((currentState) => !currentState)
      }
 
-
-  //  console.log("home" , currentMood)
   //  console.log("app songlist" , songList)
 
     console.log("user",user)
@@ -136,9 +137,7 @@ function App() {
       <Login setUser={setUser}/>
   </Route>;
 
-    // if (!songs.length) return <div><h2>Loading...</h2></div>;
-  //  console.log("app user", user)
-  //  console.log("app songs", songs)
+
 
   return (
     <>

@@ -54,10 +54,8 @@ function Account({ user, setUser, onLogin }) {
   }
 
   function pushToHome() {
-    history.push('/home');
+    history.push('/');
   }
-
-  
 
   return (
     <div className="login-container">
@@ -108,19 +106,28 @@ function Account({ user, setUser, onLogin }) {
               onChange={handleChange}
             />
           </div>
-
-          
-        </form>
-        <div>
-          <Button className="header-btn" variant="contained" color="secondary" onSubmit={handleUpdate} type="submit">
+          <br></br>
+          <Button
+            className="header-btn"
+            variant="contained"
+            color="secondary"
+            
+            type="submit"
+          >
             Update
           </Button>
-          
-          
-            <Button className="header-btn" variant="contained" color="secondary" onClick={pushToHome}>
-              Home
-            </Button>
-            </div>
+          <Button
+            className="header-btn"
+            variant="contained"
+            color="secondary"
+            onClick={pushToHome}
+          >
+            Home
+          </Button>
+        </form>
+        <div>
+
+        </div>
       </div>
     </div>
   );

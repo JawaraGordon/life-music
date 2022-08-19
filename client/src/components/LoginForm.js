@@ -49,6 +49,7 @@ function LoginForm({ setUser }) {
                 type="text"
                 id="username"
                 autoComplete="off"
+                placeholder="Keisha"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
@@ -60,6 +61,7 @@ function LoginForm({ setUser }) {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                placeholder="123"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -73,10 +75,6 @@ function LoginForm({ setUser }) {
               >
                 Login
               </Button>
-              {/* sends user to guest experience */}
-              {/* <Link to="/guest" className="link-secondary" onClick={() => {}}>
-              Guest
-            </Link> */}
             </div>
             {/* maps styled error message */}
             {/* <div>
