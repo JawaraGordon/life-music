@@ -27,7 +27,7 @@ function LoginForm({ setUser }) {
       if (resp.ok) {
         resp.json().then((user) => {
           setUser(user);
-          history.push('/home');
+          history.push('/about');
         });
       } else {
         resp.json().then((err) => setErrors(err.errors));
@@ -45,7 +45,6 @@ function LoginForm({ setUser }) {
         <div className="login-form">
           <form onSubmit={handleSubmit}>
             <div>
-              
               <input
                 // className="input"
                 type="text"
@@ -59,7 +58,6 @@ function LoginForm({ setUser }) {
             </div>
             <br></br>
             <div>
-              
               <input
                 // className="input"
                 type="password"
@@ -82,12 +80,13 @@ function LoginForm({ setUser }) {
                 Login
               </Button>
             </div>
-              <div className="error-message">
-               {errors.map((err) => (
-                <Alert variant="filled" severity="error" 
-                key={err}>{err}</Alert>
-                ))}
-             </div>
+            <div className="error-message">
+              {errors.map((err) => (
+                <Alert variant="filled" severity="error" key={err}>
+                  {err}
+                </Alert>
+              ))}
+            </div>
           </form>
         </div>
       </div>
