@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <>
       <div className="navbar">
-      <NavLink to="/">
+      <NavLink to="/home">
         <button className="nav-btn">
           <h3>Home</h3>
         </button>

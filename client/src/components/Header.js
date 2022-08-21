@@ -9,7 +9,7 @@ const history = useHistory()
   function handleLogoutClick() {
     fetch('/logout', { method: 'DELETE' }).then((r) => {
       if (r.ok) {
-        setUser(null);
+        setUser(false);
         history.push('/login');
       }
     });

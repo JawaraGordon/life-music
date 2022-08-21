@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import Alert from '@mui/material/Alert';
 import FormLabel from '@mui/material/FormLabel';
 import { useHistory } from 'react-router-dom';
 import LifeMusicLogin from '../img/LifeMusicLogin.png';
@@ -26,10 +27,11 @@ function LoginForm({ setUser }) {
       if (resp.ok) {
         resp.json().then((user) => {
           setUser(user);
-          history.push('/');
+          history.push('/home');
         });
       } else {
         resp.json().then((err) => setErrors(err.errors));
+        setTimeout(() => setErrors([]), 3000);
       }
     });
   }
@@ -76,12 +78,12 @@ function LoginForm({ setUser }) {
                 Login
               </Button>
             </div>
-            {/* maps styled error message */}
-            {/* <div>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-      </div> */}
+              <div className="error-message">
+               {errors.map((err) => (
+                <Alert variant="filled" severity="error" 
+                key={err}>{err}</Alert>
+                ))}
+             </div>
           </form>
         </div>
       </div>

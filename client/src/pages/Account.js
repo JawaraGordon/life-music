@@ -46,7 +46,7 @@ function Account({ user, setUser, onLogin }) {
       .then((updatedUser) => {
         onUpdate(updatedUser);
       });
-    history.push('/');
+    history.push('/home');
   }
 
   function onUpdate(updatedUser) {
@@ -54,7 +54,7 @@ function Account({ user, setUser, onLogin }) {
   }
 
   function pushToHome() {
-    history.push('/');
+    history.push('/home');
   }
 
   return (

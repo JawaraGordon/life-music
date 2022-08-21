@@ -5,12 +5,9 @@ import Header from './Header';
 import NavBar from './NavBar';
 import MoodBar from './MoodBar';
 import Home from '../pages/Home';
-import Chill from '../playlists/SongList';
-import songList from '../pages/Home';
 import About from '../pages/About';
 import Account from '../pages/Account';
 import MyPlayLists from '../pages/MyPlayLists';
-
 
 function App() {
   // add state for songs player
@@ -19,19 +16,6 @@ function App() {
   const [isShown, setIsShown] = useState(false);
   const [currentMood, setCurrentMood] = useState([]);
   const [songList, setSongList] = useState([]);
-  
-
-    
-    // create function that fetches users from database
-    
-    // useEffect(() => {
-    //   fetch('/users').then((resp) => {
-    //     if (resp.ok) {
-    //       resp.json().then((user) => setUser(user));
-    //     }
-    //   });
-    // }, []);
-
 
     // fetch user credentials 
   useEffect(() => {
@@ -42,15 +26,6 @@ function App() {
     });
   }, []);
 
-    
-    // useEffect(() => {
-    //   fetch('/songs').then((resp) => {
-    //     if (resp.ok) {
-    //       resp.json().then((songs) => setSongs(songs))
-    //     }
-    //   });
-    // }, []);
-    
   const handleChillClick = () => {
     setCurrentMood(()=>2)
     fetch('/songs').then((resp) => {
@@ -133,11 +108,9 @@ function App() {
 
     console.log("user",user)
     // if (!user) return <Login  />;
-    if (!user) return <Route path="/login">
+    if (!user) return <Route path="/">
       <Login setUser={setUser}/>
   </Route>;
-
-
 
   return (
     <>
@@ -147,7 +120,7 @@ function App() {
       
       <Switch>
       
-        <Route exact path="/">
+        <Route exact path="/home">
           <Home  
           songs={songs} 
           user={user} 

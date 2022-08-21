@@ -13,10 +13,14 @@ function Home({  user, isShown, songList }) {
       <div className="home-container">
         <div className="profile">
           <h1>{username}</h1>
+          <div className='profile-img'>
           <img src={image_url} className="user-img" />
+          </div>
+          <div className="profile-text">
           <h3>Age: {age}</h3>
           <h3>{bio}</h3>
           <h3>{location}</h3>
+          </div>
         </div>
         {!isShown ? null : 
         <div>
