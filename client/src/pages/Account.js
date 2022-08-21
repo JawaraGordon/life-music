@@ -62,11 +62,12 @@ function Account({ user, setUser, onLogin }) {
       <div className="login-form">
         <form autoComplete="off" onSubmit={handleUpdate}>
           <h3>Edit Your Info</h3>
-          <FormLabel htmlFor="name">Username</FormLabel>
+     
           <div>
             <input
               className="input-text"
               type="text"
+              placeholder="Username"
               id="username"
               name="username"
               value={formData.username}
@@ -74,32 +75,35 @@ function Account({ user, setUser, onLogin }) {
             />
           </div>
 
-          <FormLabel htmlFor="image_url">Image Url</FormLabel>
+          <br></br>
           <div>
             <input
               className="input-text"
               id="image_url"
+                placeholder="Image Url"
               name="image_url"
               value={formData.image_url}
               onChange={handleChange}
             />
           </div>
-          <FormLabel htmlFor="bio">Bio</FormLabel>
+          <br></br>
           <div>
             <input
               className="input-text"
               type="text"
+              placeholder="Bio"
               id="bio"
               name="bio"
               value={formData.bio}
               onChange={handleChange}
             />
           </div>
-          <FormLabel htmlFor="bio">Age</FormLabel>
+          <br></br>
           <div>
             <input
               className="input-text"
               type="number"
+              placeholder="Age"
               id="age"
               name="age"
               value={formData.age}
@@ -116,12 +120,15 @@ function Account({ user, setUser, onLogin }) {
           >
             Update
           </Button>
+          {' '} 
+          
           <Button
             className="header-btn"
             variant="contained"
             color="secondary"
             onClick={pushToHome}
           >
+            
             Home
           </Button>
         </form>
