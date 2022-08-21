@@ -136,8 +136,8 @@ p {
 .home-container {
   display: flex;
   flex-direction: row;
-  margin: 2rem;
-  padding: 2rem;
+  margin: .5rem;
+  padding: 0;
   justify-content: center;
   background-color: #000;
   width: auto;
@@ -177,11 +177,12 @@ h4{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 1rem;
-  padding: 1rem;
+  width: 100%;
+  height: 2rem;
+  padding: auto;
+  margin: auto;
   background-color: #000;
   overflow: hidden;
-  
 }
 
 .navbar a{
@@ -231,11 +232,11 @@ h4{
   overflow: hidden;
 }
 
-.header-img {
+.header img {
   display: flex;
   justify-self: left;
-  width: 5rem;
-  height: 5rem;
+  max-width: 10rem;
+  max-height: 5rem;
 }
 
 button {
@@ -299,7 +300,6 @@ button {
   width: auto;
   background-color: #0bff99 ;
   text-align: center;
-  /* justify-content: center; */
   border-radius: 10px;
 }
 .profile-img{
@@ -362,3 +362,15 @@ button {
   overflow: hidden;
   }
 }
+
+@media only screen and (max-width: 300) {
+  .nav-bar,
+  .mood-bar{
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  }
+}
+

@@ -16,7 +16,7 @@ function Login({ setUser }) {
 
           <div className="login-container">
             <p>
-              &nbsp;
+              
               <Button
                 variant="contained"
                 color="secondary"

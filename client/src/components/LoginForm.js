@@ -45,29 +45,33 @@ function LoginForm({ setUser }) {
         <div className="login-form">
           <form onSubmit={handleSubmit}>
             <div>
-              <FormLabel htmlFor="username">Username</FormLabel>
+              
               <input
-                className="input"
+                // className="input"
                 type="text"
                 id="username"
                 autoComplete="off"
-                placeholder="Keisha"
+                className="input-text"
+                placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
+            <br></br>
             <div>
-              <FormLabel htmlFor="password">Password</FormLabel>
+              
               <input
-                className="input"
+                // className="input"
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                placeholder="123"
+                className="input-text"
+                placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+            <br></br>
             <div>
               <Button
                 className="header-btn"

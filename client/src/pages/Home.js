@@ -22,11 +22,11 @@ function Home({  user, isShown, songList }) {
           <h3>{location}</h3>
           </div>
         </div>
-        {!isShown ? null : 
+        {/* {!isShown ? null :  */}
         <div>
           <SongList songs={songList} />
         </div>
-        }
+        {/* } */}
       </div>
     </>
   );
