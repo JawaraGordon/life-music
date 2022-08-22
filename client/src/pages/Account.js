@@ -69,8 +69,8 @@ function Account({ user, setUser, onLogin }) {
     }
   }
 
-  function pushToLogin() {
-    history.push('/login');
+  function pushToHome() {
+    history.push('/home');
   }
 
   return (
@@ -142,7 +142,7 @@ function Account({ user, setUser, onLogin }) {
             className="header-btn"
             variant="contained"
             color="secondary"
-            onClick={pushToLogin}
+            onClick={pushToHome}
           >
             
             Home
