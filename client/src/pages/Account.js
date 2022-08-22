@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 
@@ -52,9 +50,27 @@ function Account({ user, setUser, onLogin }) {
   function onUpdate(updatedUser) {
     setUser(updatedUser);
   }
+// delete the user
+  const handleDelete = () => {
+    fetch(`user/${user.id}`, {
+      method: 'DELETE',
+      headers: { Accept: 'application/json' },
+    });
+    window.location.reload();
+  };
 
-  function pushToHome() {
-    history.push('/home');
+  function confirmAction() {
+    let confirmAction = window.confirm('Are you sure?');
+    if (confirmAction) {
+      alert('The music is not in the notes, but in the silence between. - Mozart');
+      handleDelete(user.id);
+    } else {
+      alert('Music is life!');
+    }
+  }
+
+  function pushToLogin() {
+    history.push('/login');
   }
 
   return (
@@ -126,10 +142,21 @@ function Account({ user, setUser, onLogin }) {
             className="header-btn"
             variant="contained"
             color="secondary"
-            onClick={pushToHome}
+            onClick={pushToLogin}
           >
             
             Home
+          </Button>
+          {' '} 
+          
+          <Button
+            className="header-btn"
+            variant="contained"
+            color="secondary"
+            onClick={() => confirmAction(user.id)}
+          >
+            
+            Delete
           </Button>
         </form>
         <div>
