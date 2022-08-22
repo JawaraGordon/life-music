@@ -17,7 +17,7 @@ function App() {
   const [currentMood, setCurrentMood] = useState([]);
   const [songList, setSongList] = useState([]);
 
-    // fetch user credentials 
+  // fetch user credentials
   useEffect(() => {
     fetch('/me').then((resp) => {
       if (resp.ok) {
@@ -26,117 +26,131 @@ function App() {
     });
   }, []);
 
+  // fetch all songs
+  // useEffect(() => {
+  //   fetch('/songs').then((resp) => {
+  //     if (resp.ok) {
+  //       resp.json().then((songs) => {
+  //         setSongs(songs);
+  //       });
+  //     }
+  //   });
+  // }, []);
+
+  // console.log('App songs', songs);
+
   const handleChillClick = () => {
-    setCurrentMood(()=>2)
+    setCurrentMood(() => 2);
     fetch('/songs').then((resp) => {
       if (resp.ok) {
-        resp.json().then((songs) => {
-          
-
-          setSongs(songs)})
-        
+        resp.json().then((songs) => setSongs(songs));
       }
     });
-    const filteredSongs = songs.filter( 
-          (song) => song.mood_rank === currentMood
-          );
-        setSongList(filteredSongs);
-        setIsShown((currentState) => !currentState)
-   }
-   const handleExcitedClick = () => {
-     setCurrentMood(()=> 3)
-     fetch('/songs').then((resp) => {
-       if (resp.ok) {
-         resp.json().then((songs) => setSongs(songs))
-       }
-     });
- 
-     const filteredSongs = songs.filter( 
-       (song) => song.mood_rank === currentMood
-       );
-     setSongList(filteredSongs);
-     setIsShown((currentState) => !currentState)
- 
-    }
 
-    const handleFocusedClick = () => {
-      setCurrentMood(()=>1)
-      fetch('/songs').then((resp) => {
-        if (resp.ok) {
-          resp.json().then((songs) => setSongs(songs))
-          
-        }
-      });
-      const filteredSongs = songs.filter( 
-            (song) => song.mood_rank === currentMood
-            );
-          setSongList(filteredSongs);
-          setIsShown((currentState) => !currentState)
-     }
+    const filteredSongs = songs.filter(
+      (song) => song.mood_rank === currentMood
+    );
+    setSongList(filteredSongs);
+    setIsShown((currentState) => !currentState);
+  };
+  const handleEnergizedClick = () => {
+    setCurrentMood(() => 3);
+    fetch('/songs').then((resp) => {
+      if (resp.ok) {
+        resp.json().then((songs) => setSongs(songs));
+      }
+    });
 
-     const handleSadClick = () => {
-      setCurrentMood(()=>4)
-      fetch('/songs').then((resp) => {
-        if (resp.ok) {
-          resp.json().then((songs) => setSongs(songs))
-          
-        }
-      });
-      const filteredSongs = songs.filter( 
-            (song) => song.mood_rank === currentMood
-            );
-          setSongList(filteredSongs);
-          setIsShown((currentState) => !currentState)
-     }
+    const filteredSongs = songs.filter(
+      (song) => song.mood_rank === currentMood
+    );
+    setSongList(filteredSongs);
+    setIsShown((currentState) => !currentState);
+  };
 
-     const handleHappyClick = () => {
-      setCurrentMood(()=>5)
-      fetch('/songs').then((resp) => {
-        if (resp.ok) {
-          resp.json().then((songs) => setSongs(songs))
-          
-        }
-      });
-      const filteredSongs = songs.filter( 
-            (song) => song.mood_rank === currentMood
-            );
-          setSongList(filteredSongs);
-          setIsShown((currentState) => !currentState)
-     }
+  const handleFocusedClick = () => {
+    setCurrentMood(() => 1);
+    fetch('/songs').then((resp) => {
+      if (resp.ok) {
+        resp.json().then((songs) => setSongs(songs));
+      }
+    });
+    const filteredSongs = songs.filter(
+      (song) => song.mood_rank === currentMood
+    );
+    setSongList(filteredSongs);
+    setIsShown((currentState) => !currentState);
+  };
 
-  //  console.log("app songlist" , songList)
+  const handleSadClick = () => {
+    setCurrentMood(() => 4);
+    fetch('/songs').then((resp) => {
+      if (resp.ok) {
+        resp.json().then((songs) => setSongs(songs));
+      }
+    });
+    const filteredSongs = songs.filter(
+      (song) => song.mood_rank === currentMood
+    );
+    setSongList(filteredSongs);
+    setIsShown((currentState) => !currentState);
+  };
 
-    console.log("user",user)
-    // if (!user) return <Login  />;
-    if (!user) return <Route path="/">
-      <Login setUser={setUser}/>
-  </Route>;
+  const handleHappyClick = () => {
+    setCurrentMood(() => 5);
+    fetch('/songs').then((resp) => {
+      if (resp.ok) {
+        resp.json().then((songs) => setSongs(songs));
+      }
+    });
+    const filteredSongs = songs.filter(
+      (song) => song.mood_rank === currentMood
+    );
+    setSongList(filteredSongs);
+    setIsShown((currentState) => !currentState);
+  };
+
+  if (!user)
+    return (
+      <Route path="/">
+        <Login setUser={setUser} />
+      </Route>
+    );
 
   return (
     <>
-  <Header setUser={setUser}/>
-  <NavBar user={user} setUser={setUser} />
-  <MoodBar user={user} setUser={setUser} handleChillClick={handleChillClick} handleExcitedClick={handleExcitedClick} handleFocusedClick={handleFocusedClick} handleSadClick={handleSadClick} handleHappyClick={handleHappyClick}/>
-      
+      <Header setUser={setUser} />
+      <NavBar user={user} setUser={setUser} />
+      <MoodBar
+        user={user}
+        setUser={setUser}
+        handleChillClick={handleChillClick}
+        handleEnergizedClick={handleEnergizedClick}
+        handleFocusedClick={handleFocusedClick}
+        handleSadClick={handleSadClick}
+        handleHappyClick={handleHappyClick}
+      />
+
       <Switch>
-      
         <Route exact path="/home">
-          <Home  
-          songs={songs} 
-          user={user} 
-          isShown={isShown}
-          songList={songList} 
-          currentMood={currentMood} 
-          setCurrentMood={setCurrentMood}/>
+          <Home
+            songs={songs}
+            setSongs={setSongs}
+            user={user}
+            isShown={isShown}
+            songList={songList}
+            currentMood={currentMood}
+            setCurrentMood={setCurrentMood}
+          />
         </Route>
         <Route path="/about">
-          <About/>
+          <About />
         </Route>
         <Route path="/account">
-          <Account user={user} setUser={setUser}/>
+          <Account user={user} setUser={setUser} />
         </Route>
         <Route path="/playlists">
-          <MyPlayLists user={user} setUser={setUser} songList={songList}/>
+          <MyPlayLists user={user} setUser={setUser} songList={songList} />
         </Route>
       </Switch>
     </>

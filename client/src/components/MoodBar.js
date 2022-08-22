@@ -4,7 +4,7 @@ function MoodBar({
   handleHappyClick,
   handleSadClick,
   handleChillClick,
-  handleExcitedClick,
+  handleEnergizedClick,
   handleFocusedClick,
 }) {
   return (
@@ -18,7 +18,7 @@ function MoodBar({
           <h3>Happy</h3>
         </Button>
         <Button
-          onClick={handleExcitedClick}
+          onClick={handleEnergizedClick}
           variant="contained"
           color="secondary"
         >

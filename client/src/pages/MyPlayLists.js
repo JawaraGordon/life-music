@@ -10,14 +10,6 @@ function MyPlayLists({  user, songList }) {
   
   return (
     <>
-      {/* <div className="home-container">
-        <div className="profile">
-          <h1>{username}</h1>
-          <img src={image_url} className="user-img" />
-          <h3>{bio}</h3>
-          <h3>{location}</h3>
-        </div> */}
-      {/* </div> */}
         
         <div className="playlists-container">
         <div>

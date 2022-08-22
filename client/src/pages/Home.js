@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import React, { useEffect, useState } from 'react';
 import SongList from '../playlists/SongList';
 
-function Home({ user, isShown, songList }) {
+function Home({ user, isShown, songList, setSongs}) {
   const { username, image_url, bio, age, location } = user;
 
   return (
@@ -22,7 +22,7 @@ function Home({ user, isShown, songList }) {
         </div>
         {!isShown ? null : (
           <div>
-            <SongList songs={songList} />
+            <SongList songs={songList} setSongs={setSongs} user={user}/>
           </div>
         )}
       </div>
