@@ -9,7 +9,7 @@ function MyPlayLists({  user, songList }) {
  
   // const { username, image_url, bio, location } = user;
 
-  console.log(userPlaylists)
+  // console.log(userPlaylists)
 
   useEffect(() => {
     fetch('/playlists/').then((resp) => {

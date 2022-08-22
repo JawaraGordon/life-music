@@ -253,18 +253,28 @@ button {
   justify-self: center;
 }
 
+.clock-btn{
+  margin: auto;
+  padding: 0;
+  border:#9414b2 solid 5px;
+  height:auto;
+  background-color: #0bff99;
+
+
+}
+
 .header-btn{
   position: relative;
   background-color: #0bff99;
-  border: rgb(0, 0, 0) solid 1px;
+  /* border:#9414b2 solid 3px; */
   border-radius: 5px;
   height: 2rem;
   width: max-content;
   margin: .5rem;
-  padding: 5px;
+  padding: 2px;
   color: rgb(0, 0, 0);
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
   justify-self: center;
 }
 

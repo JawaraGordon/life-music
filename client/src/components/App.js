@@ -38,6 +38,7 @@ function App() {
   // }, []);
 
   // console.log('App songs', songs);
+  // console.log('App user', user);
 
   const handleChillClick = () => {
     setCurrentMood(() => 2);

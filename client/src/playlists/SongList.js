@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import ReactAudioPlayer from 'react-audio-player';
 
 function SongList({ songs, user }) {
 
+  // force render based on song array state 
   // const [loaded, setLoaded] = useState([]);
+
+  // set playlist data state
   const [playListData, setPlaylistData] = useState({
     name: '',
     image_url: '',
@@ -15,11 +16,9 @@ function SongList({ songs, user }) {
     song_id: '',
   });
 
-  console.log("playlist Data", playListData)
-
-  
+  // function to POST playlist from onClick listener
   const savePlayList = ()=>
-  {fetch(`/playlists`, {
+  {fetch('/playlists', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -29,16 +28,10 @@ function SongList({ songs, user }) {
     body: JSON.stringify(playListData),
   })}
     
-
-
-
-
-
-// setTimeout(() => {<SongList songs={songList} />},1000)
-
+// generate random song album image
   const randomSongsAlbumImg = songs.album_img
 
-  // randomly sort array or songs
+  // randomly sort array of songs
   const randomSongs = songs.sort(() => Math.random() - 0.5);
 
   //create song player JSX
@@ -56,15 +49,13 @@ function SongList({ songs, user }) {
     </figure>
   ));
 
-  
-
   // map song images
   const songImg = randomSongs.map((song) => {
     return song.album_img;
   });
 
+  // create hash to POST song data
   useEffect(() => {
-    
   const randomSongData = randomSongs.map((song) => {
     return {
       "name": song.title,
@@ -78,6 +69,9 @@ function SongList({ songs, user }) {
   
   },[])
   
+
+  // console.log("playlist Data", playListData)
+  // console.log('Songlist user', user);
   // console.log("songlist PL DATA", playListData)
   
   return (
