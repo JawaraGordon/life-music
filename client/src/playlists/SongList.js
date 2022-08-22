@@ -72,7 +72,7 @@ function SongList({ songs, user }) {
 
   // console.log("playlist Data", playListData)
   // console.log('Songlist user', user);
-  // console.log("songlist PL DATA", playListData)
+  console.log("songlist PL DATA", playListData)
   
   return (
     <>

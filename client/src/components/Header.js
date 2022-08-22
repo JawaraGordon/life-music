@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import LifeMusicLogo from '../img/LifeMusicLogo.png';
 import Clock from './Clock';
 
-function Header({ setUser }) {
+function Header({ setUser, handleClockClick }) {
   const history = useHistory();
 
   function handleLogoutClick() {
@@ -23,7 +23,9 @@ function Header({ setUser }) {
             <img src={LifeMusicLogo} alt="logo" />
           </a>
 
-          <Clock/>
+          <Clock
+          // handleClockClick={handleClockClick}
+          />
         
         <button onClick={handleLogoutClick} className="header-btn">
           Logout

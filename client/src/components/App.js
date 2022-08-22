@@ -16,15 +16,17 @@ function App() {
   const [isShown, setIsShown] = useState(false);
   const [currentMood, setCurrentMood] = useState([]);
   const [songList, setSongList] = useState([]);
+  
 
-  // fetch user credentials
-  useEffect(() => {
-    fetch('/me').then((resp) => {
-      if (resp.ok) {
-        resp.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+// fetch user credentials
+useEffect(() => {
+  fetch('/me').then((resp) => {
+    if (resp.ok) {
+      resp.json().then((user) => setUser(user));
+    }
+  });
+}, []);
+
 
   // fetch all songs
   // useEffect(() => {
@@ -111,6 +113,30 @@ function App() {
     setIsShown((currentState) => !currentState);
   };
 
+  // const handleClockClick = () => {
+
+  //     if (localTime === "AM") {
+  //       setCurrentMood(1);
+  //     } else if
+  //     (localTime === "PM") {
+  //       setCurrentMood(3);
+  //     } else
+  //     setCurrentMood(2)
+    
+
+  //   fetch('/songs').then((resp) => {
+  //     if (resp.ok) {
+  //       resp.json().then((songs) => setSongs(songs));
+  //     }
+  //   });
+    
+  //   const filteredSongs = songs.filter(
+  //     (song) => song.mood_rank === currentMood
+  //   );
+  //   setSongList(filteredSongs);
+  //   setIsShown((currentState) => !currentState);
+  // };
+
   if (!user)
     return (
       <Route path="/">
@@ -120,7 +146,9 @@ function App() {
 
   return (
     <>
-      <Header setUser={setUser} />
+      <Header setUser={setUser} 
+      // handleClockClick={handleClockClick}
+      />
       <NavBar user={user} setUser={setUser} />
       <MoodBar
         user={user}

@@ -12,7 +12,7 @@ function MyPlayLists({  user, songList }) {
   // console.log(userPlaylists)
 
   useEffect(() => {
-    fetch('/playlists/').then((resp) => {
+    fetch('/playlists').then((resp) => {
       if (resp.ok) {
         resp.json().then((playlists) => setUserPlaylists(playlists));
       }

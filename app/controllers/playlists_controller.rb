@@ -1,7 +1,8 @@
 class PlaylistsController < ApplicationController
-    skip_before_action :authorize, only: :create
+    skip_before_action :authorize, only: [:create, :index, :show, :playlist]
     def create
         playlist = Playlist.create([playlist_params])
+        # debugger
         render json: playlist, status: :created
       end
   
@@ -14,6 +15,11 @@ class PlaylistsController < ApplicationController
         song = Playlist.find(params[:id])
         render json: song, status: :ok
     end
+
+    def playlist
+        playlist = Playlist.find(params[:id])
+        render json: playlist, serializer: PlaylistSongsSerializer
+      end
   
   
       def destroy
@@ -26,7 +32,7 @@ class PlaylistsController < ApplicationController
       private
     
       def playlist_params
-        params.permit(:id, [:name, :image_url, :mood_rank, :user_id, :song_id])
+        params.permit(:id, :name, :image_url, :mood_rank, :user_id, :song_id)
       end
 
 end

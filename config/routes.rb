@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/me', to: 'users#show'  
   get '/user', to: 'users#show'
   get '/user/:id', to: 'users#index'
+  get '/playlists/:id/playlist', to: 'playlists#playlist'
+  get '/playlists', to: 'playlists#index'
   delete '/user/:id', to: 'users#destroy'
   patch '/user/:id', to: 'users#update'
   post '/login', to: 'sessions#create'
