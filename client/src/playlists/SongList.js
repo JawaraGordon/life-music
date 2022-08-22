@@ -8,26 +8,26 @@ function SongList({ songs, user }) {
 
   // const [loaded, setLoaded] = useState([]);
   const [playListData, setPlaylistData] = useState({
-    user_id: '',
-    username: '',
+    name: '',
     image_url: '',
-    bio: '',
-    age: '',
+    mood_rank: '',
+    user_id: '',
+    song_id: '',
   });
 
-  console.log("songList songs", songs)
+  console.log("playlist Data", playListData)
 
   
-  // const savePlayList = ()=>
-  // {fetch(`/playlists/${user.id}`, {
-  //   method: 'PATCH',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     Accept: 'application/json',
-  //   },
+  const savePlayList = ()=>
+  {fetch(`/playlists`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
 
-  //   body: JSON.stringify(randomSongs),
-  // })}
+    body: JSON.stringify(playListData),
+  })}
     
 
 
@@ -41,6 +41,7 @@ function SongList({ songs, user }) {
   // randomly sort array or songs
   const randomSongs = songs.sort(() => Math.random() - 0.5);
 
+  //create song player JSX
   const songPlayer = randomSongs.map((s) => (
     
     <figure key={s.id}>
@@ -61,6 +62,23 @@ function SongList({ songs, user }) {
   const songImg = randomSongs.map((song) => {
     return song.album_img;
   });
+
+  useEffect(() => {
+    
+  const randomSongData = randomSongs.map((song) => {
+    return {
+      "name": song.title,
+      "image_url": song.album_img,
+      "mood_rank": song.mood_rank,
+      "user_id": user.id,
+      "song_id": song.id,
+    }})
+  setPlaylistData(randomSongData)
+  // console.log("randomsong data",randomSongData)
+  
+  },[])
+  
+  // console.log("songlist PL DATA", playListData)
   
   return (
     <>
@@ -69,7 +87,7 @@ function SongList({ songs, user }) {
     <div className="song-container">
       {songPlayer}
       <Box m={2}>
-        <Button variant="contained">Save</Button>
+        <Button onClick={()=>savePlayList()} variant="contained">Save</Button>
       </Box>
       {/* <Box m={2}>
         <Button variant="contained">Edit</Button>

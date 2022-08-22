@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete '/user/:id', to: 'users#destroy'
   patch '/user/:id', to: 'users#update'
   post '/login', to: 'sessions#create'
+  post '/playlists/:id', to: 'playlists#create'
   delete '/logout', to: 'sessions#logout'
   
   

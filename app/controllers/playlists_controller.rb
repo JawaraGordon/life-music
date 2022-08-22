@@ -1,7 +1,7 @@
 class PlaylistsController < ApplicationController
     skip_before_action :authorize, only: :create
     def create
-        playlist = Playlist.create(playlist_params)
+        playlist = Playlist.create([playlist_params])
         render json: playlist, status: :created
       end
   
@@ -26,7 +26,7 @@ class PlaylistsController < ApplicationController
       private
     
       def playlist_params
-        params.permit(:name, :image_url, :mood_rank, :image_url, :user_id, :song_id)
+        params.permit(:id, :name, :image_url, :mood_rank, :image_url, :user_id, :song_id)
       end
 
 end
