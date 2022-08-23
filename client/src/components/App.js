@@ -16,18 +16,17 @@ function App() {
   const [isShown, setIsShown] = useState(false);
   const [currentMood, setCurrentMood] = useState([]);
   const [songList, setSongList] = useState([]);
-  
 
-// fetch user credentials
-useEffect(() => {
-  fetch('/me').then((resp) => {
-    if (resp.ok) {
-      resp.json().then((user) => setUser(user));
-    }
-  });
-}, []);
+  // fetch user credentials
+  useEffect(() => {
+    fetch('/me').then((resp) => {
+      if (resp.ok) {
+        resp.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
 
-console.log(user)
+  console.log(user);
   // fetch all songs
   // useEffect(() => {
   //   fetch('/songs').then((resp) => {
@@ -44,7 +43,7 @@ console.log(user)
 
   const handleChillClick = () => {
     setCurrentMood(() => 2);
-    fetch('/songs').then((resp) => {
+    fetch('/songs/?_limit=4').then((resp) => {
       if (resp.ok) {
         resp.json().then((songs) => setSongs(songs));
       }
@@ -122,14 +121,13 @@ console.log(user)
   //       setCurrentMood(3);
   //     } else
   //     setCurrentMood(2)
-    
 
   //   fetch('/songs').then((resp) => {
   //     if (resp.ok) {
   //       resp.json().then((songs) => setSongs(songs));
   //     }
   //   });
-    
+
   //   const filteredSongs = songs.filter(
   //     (song) => song.mood_rank === currentMood
   //   );
@@ -146,8 +144,9 @@ console.log(user)
 
   return (
     <>
-      <Header setUser={setUser} 
-      // handleClockClick={handleClockClick}
+      <Header
+        setUser={setUser}
+        // handleClockClick={handleClockClick}
       />
       <NavBar user={user} setUser={setUser} />
       <MoodBar

@@ -11,6 +11,13 @@ Song.create(title: "0500 Brunch",artist: "DJ Imminent", album_img: "https://sour
 Song.create(title: "3AM FOMO",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:258, mood_rank:2, bpm:80, key_of_song:"Am", song_url:"https://jawaragordon.com/music/chill/3AM%20FOMO%20ft.%20Andres.mp3" )
 Song.create(title: "Poolin Chillside",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:357, mood_rank:2, bpm:93, key_of_song:"Ebm", song_url:"https://jawaragordon.com/music/chill/Poolin%20Chillside.mp3" )
 Song.create(title: "Paper Work",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:83, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/Paper%20Work.mp3" )
+Song.create(title: "Change Can Happen",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:209, mood_rank:2, bpm:85, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/Change%20Can%20Happen.mp3" )
+Song.create(title: "Dimensions",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:258, mood_rank:2, bpm:80, key_of_song:"Am", song_url:"https://jawaragordon.com/music/chill/Dimensions.mp3" )
+Song.create(title: "By Storm",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:357, mood_rank:2, bpm:93, key_of_song:"Ebm", song_url:"https://jawaragordon.com/music/chill/Imminent%20-%20By%20Storm.mp3" )
+Song.create(title: "Collect Calls",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:85, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/IN%20A%20TRANCE.mp3" )
+Song.create(title: "Rise Above",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/Rise%20Above.mp3" )
+Song.create(title: "Soul Star",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/Soul%20Star.mp3" )
+Song.create(title: "Transcending Universe",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/Transcending%20Universe%20Rendered.mp3" )
 
 puts 'Seeding Excited Songs...'
 

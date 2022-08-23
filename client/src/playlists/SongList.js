@@ -69,6 +69,7 @@ function SongList({ songs, user }) {
   
   },[])
   
+  const shortSongList = songPlayer.slice(0, 4)
 
   // console.log("playlist Data", playListData)
   // console.log('Songlist user', user);
@@ -79,7 +80,7 @@ function SongList({ songs, user }) {
       <img src={songImg[0]} className="song-img" />
     
     <div className="song-container">
-      {songPlayer}
+      {shortSongList}
       <Box m={2}>
         <Button onClick={()=>savePlayList()} variant="contained">Save</Button>
       </Box>
