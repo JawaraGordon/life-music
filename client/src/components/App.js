@@ -27,7 +27,7 @@ useEffect(() => {
   });
 }, []);
 
-
+console.log(user)
   // fetch all songs
   // useEffect(() => {
   //   fetch('/songs').then((resp) => {

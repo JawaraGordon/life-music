@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
   resources :playlists
-  
-
   resources :users
   resources :songs
   
   post "/signup", to: "users#create"
   get '/me', to: 'users#show'  
-  get '/user', to: 'users#show'
-  get '/user/:id', to: 'users#index'
-  get '/playlists/:id/playlist', to: 'playlists#playlist'
-  get '/playlists', to: 'playlists#index'
-  delete '/user/:id', to: 'users#destroy'
-  patch '/user/:id', to: 'users#update'
+  # get '/users', to: 'users#show'
+  # get '/users/:id', to: 'users#index'
+  # get '/playlists/:id/playlist', to: 'playlists#playlist'
+  # get '/playlists', to: 'playlists#index'
+  # delete '/user/:id', to: 'users#destroy'
+  # patch '/user/:id', to: 'users#update'
   post '/login', to: 'sessions#create'
-  post '/playlists/:id', to: 'playlists#create'
+  # post '/playlists/:id', to: 'playlists#create'
   delete '/logout', to: 'sessions#logout'
   
   

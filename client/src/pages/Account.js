@@ -15,7 +15,7 @@ function Account({ user, setUser, onLogin }) {
   // console.log("account user", user);
 
   useEffect(() => {
-    fetch(`/user/${user.id}`)
+    fetch(`/users/${user.id}`)
       .then((resp) => resp.json())
       .then((user) => setFormData(user));
   }, [user.id]);
@@ -31,7 +31,7 @@ function Account({ user, setUser, onLogin }) {
   function handleUpdate(e) {
     e.preventDefault();
 
-    fetch(`/user/${user.id}`, {
+    fetch(`/users/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function Account({ user, setUser, onLogin }) {
   }
 // delete the user
   const handleDelete = () => {
-    fetch(`user/${user.id}`, {
+    fetch(`users/${user.id}`, {
       method: 'DELETE',
       headers: { Accept: 'application/json' },
     });
