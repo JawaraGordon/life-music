@@ -1,4 +1,4 @@
 class Playlist < ApplicationRecord
   belongs_to :user
-  belongs_to :song
+  belongs_to :favorite_song
 end

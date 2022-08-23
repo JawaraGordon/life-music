@@ -16,10 +16,10 @@ class PlaylistsController < ApplicationController
         render json: song, status: :ok
     end
 
-    def playlist
-        playlist = Playlist.find(params[:id])
-        render json: playlist, serializer: PlaylistSongsSerializer
-      end
+    # def playlist
+    #     playlist = Playlist.find(params[:id])
+    #     render json: playlist, serializer: PlaylistSongsSerializer
+    #   end
   
   
       def destroy
