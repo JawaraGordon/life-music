@@ -357,8 +357,8 @@ button {
 .song-player {
   display: flex;
   justify-items: center;
-  width: 15rem;
-
+  width: 18rem;
+  text-align: center;
 
 }
 

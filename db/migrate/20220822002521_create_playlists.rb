@@ -5,7 +5,6 @@ class CreatePlaylists < ActiveRecord::Migration[7.0]
       t.datetime :date
       t.integer :mood_rank
       t.belongs_to :user, null: false, foreign_key: true
-      t.belongs_to :song, null: false, foreign_key: true
 
       t.timestamps
     end

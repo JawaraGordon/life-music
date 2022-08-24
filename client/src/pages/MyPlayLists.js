@@ -19,21 +19,23 @@ function MyPlayLists({  user, songList }) {
     });
   }, []);
 
-  const playlistPlayer = userPlaylists.map((playlist) => (
+  console.log("Myplaylists", userPlaylists)
+
+//   const playlistPlayer = userPlaylists.map((playlist) => (
     
-    <figure key={playlist.song.id}>
-      <figcaption>
-        <img src={playlist.song.album_img} className="song-img"/>
-        <h2>{playlist.song.title}</h2>
-      </figcaption>
-      <div className="song-player">
-      <audio controls loop>
- <source src={playlist.song.song_url} type="audio/mpeg;"/>
-</audio>
-</div>
-    </figure>
+//     <figure key={playlist.song.id}>
+//       <figcaption>
+//         <img src={playlist.song.album_img} className="song-img"/>
+//         <h2>{playlist.song.title}</h2>
+//       </figcaption>
+//       <div className="song-player">
+//       <audio controls loop>
+//  <source src={playlist.song.song_url} type="audio/mpeg;"/>
+// </audio>
+// </div>
+//     </figure>
     
-  ));
+//   ));
 
   
   return (
@@ -41,7 +43,7 @@ function MyPlayLists({  user, songList }) {
         
         <div className="playlists-container">
         <div className="song-container">
-          {playlistPlayer}
+          {/* {playlistPlayer} */}
         </div>
         </div>
         
