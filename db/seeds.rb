@@ -76,11 +76,11 @@ Song.create(title: "What You Know About The Oboe",artist: "DJ Imminent", album_i
 
 puts 'Seeding Playlists...'
 
-Playlist.create(name: "Chill 1", mood_rank: 2, user_id: User.first.id, image_url: "https://source.unsplash.com/random/?chill")
+# Playlist.create(name: "Chill 1", mood_rank: 2, user_id: User.first.id, image_url: "https://source.unsplash.com/random/?chill")
 
 
 puts 'Seeding Favorite Song...'
 
-FavoriteSong.create(song_id:Song.first.id, playlist_id:Playlist.first.id)
+# FavoriteSong.create(song_id:Song.first.id, playlist_id:Playlist.first.id)
 
 puts "✅ Done seeding!"

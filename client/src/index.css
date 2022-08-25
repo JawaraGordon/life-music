@@ -342,10 +342,24 @@ button {
 
 .playlists-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   justify-content: center;
   background-color: #000;
 
+}
+.playlist-song-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9414b2;
+  margin: 1rem;
+  padding: 2rem;
+}
+.playlist-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border:#0bff99 solid 1px;
 }
 .song-container {
   display: flex;

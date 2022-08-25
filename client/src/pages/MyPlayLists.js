@@ -3,13 +3,8 @@ import Box from '@mui/material/Box';
 import React, { useEffect, useState } from 'react';
 import SongList from '../playlists/SongList';
 
-function MyPlayLists({  user, songList }) {
-
-  const [userPlaylists, setUserPlaylists] = useState([])
- 
-  // const { username, image_url, bio, location } = user;
-
-  // console.log(userPlaylists)
+function MyPlayLists() {
+  const [userPlaylists, setUserPlaylists] = useState([]);
 
   useEffect(() => {
     fetch('/playlists').then((resp) => {
@@ -19,34 +14,37 @@ function MyPlayLists({  user, songList }) {
     });
   }, []);
 
-  console.log("Myplaylists", userPlaylists)
+  // console.log("Myplaylists", userPlaylists)
 
-//   const playlistPlayer = userPlaylists.map((playlist) => (
-    
-//     <figure key={playlist.song.id}>
-//       <figcaption>
-//         <img src={playlist.song.album_img} className="song-img"/>
-//         <h2>{playlist.song.title}</h2>
-//       </figcaption>
-//       <div className="song-player">
-//       <audio controls loop>
-//  <source src={playlist.song.song_url} type="audio/mpeg;"/>
-// </audio>
-// </div>
-//     </figure>
-    
-//   ));
-
-  
   return (
     <>
-        
-        <div className="playlists-container">
-        <div className="song-container">
-          {/* {playlistPlayer} */}
+      <div className="playlists-container">
+        <div className="playlist-song-container">
+          <h2>Playlists</h2>
+          <div>
+            <div className="playlist-line"></div>
+            {userPlaylists.map((playlist, index) => {
+              return (
+                <div key={index}>
+                  <h2>{playlist.name}</h2>
+                  {playlist.favorite_songs.map((s, index) => {
+                    return (
+                      <div key={index}>
+                        <h2>{s.song_name}</h2>
+                        <audio controls loop>
+                          <source src={s.song_url} type="audio/mpeg;" />
+                        </audio>
+                      </div>
+                    );
+                  })}
+                  <br></br>
+                  <div className="playlist-line"></div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        </div>
-        
+      </div>
     </>
   );
 }
