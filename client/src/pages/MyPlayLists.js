@@ -31,7 +31,7 @@ function MyPlayLists() {
                     return (
                       <div key={index}>
                         <h2>{s.song_name}</h2>
-                        <audio controls loop>
+                        <audio controls loop controlsList="nodownload">
                           <source src={s.song_url} type="audio/mpeg;" />
                         </audio>
                       </div>

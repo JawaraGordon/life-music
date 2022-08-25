@@ -4,7 +4,7 @@ import Login from './Login';
 import Header from './Header';
 import NavBar from './NavBar';
 import MoodBar from './MoodBar';
-import Home from '../pages/Home';
+import Music from '../pages/Music';
 import About from '../pages/About';
 import Account from '../pages/Account';
 import MyPlayLists from '../pages/MyPlayLists';
@@ -28,26 +28,22 @@ function App() {
 
   // console.log(user);
   // fetch all songs
-  // useEffect(() => {
-  //   fetch('/songs').then((resp) => {
-  //     if (resp.ok) {
-  //       resp.json().then((songs) => {
-  //         setSongs(songs);
-  //       });
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+
+    fetch('/songs').then((resp) => {
+      if (resp.ok) {
+        resp.json().then((songs) => {
+          setSongs(songs);
+        });
+      }
+    });
+  }, []);
 
   // console.log('App songs', songs);
   // console.log('App user', user);
 
   const handleChillClick = () => {
     setCurrentMood(() => 2);
-    fetch('/songs/?_limit=4').then((resp) => {
-      if (resp.ok) {
-        resp.json().then((songs) => setSongs(songs));
-      }
-    });
 
     const filteredSongs = songs.filter(
       (song) => song.mood_rank === currentMood
@@ -57,11 +53,6 @@ function App() {
   };
   const handleEnergizedClick = () => {
     setCurrentMood(() => 3);
-    fetch('/songs').then((resp) => {
-      if (resp.ok) {
-        resp.json().then((songs) => setSongs(songs));
-      }
-    });
 
     const filteredSongs = songs.filter(
       (song) => song.mood_rank === currentMood
@@ -69,42 +60,25 @@ function App() {
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
-
   const handleFocusedClick = () => {
     setCurrentMood(() => 1);
-    fetch('/songs').then((resp) => {
-      if (resp.ok) {
-        resp.json().then((songs) => setSongs(songs));
-      }
-    });
     const filteredSongs = songs.filter(
       (song) => song.mood_rank === currentMood
     );
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
-
   const handleSadClick = () => {
     setCurrentMood(() => 4);
-    fetch('/songs').then((resp) => {
-      if (resp.ok) {
-        resp.json().then((songs) => setSongs(songs));
-      }
-    });
+    
     const filteredSongs = songs.filter(
       (song) => song.mood_rank === currentMood
     );
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
-
   const handleHappyClick = () => {
     setCurrentMood(() => 5);
-    fetch('/songs').then((resp) => {
-      if (resp.ok) {
-        resp.json().then((songs) => setSongs(songs));
-      }
-    });
     const filteredSongs = songs.filter(
       (song) => song.mood_rank === currentMood
     );
@@ -160,8 +134,8 @@ function App() {
       />
 
       <Switch>
-        <Route exact path="/home">
-          <Home
+        <Route exact path="/music">
+          <Music
             songs={songs}
             setSongs={setSongs}
             user={user}

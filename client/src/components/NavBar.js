@@ -7,9 +7,9 @@ function NavBar() {
   return (
     <>
       <div className="navbar">
-      <NavLink to="/home">
+      <NavLink to="/music">
         <button className="nav-btn">
-          <h3>Home</h3>
+          <h3>Music</h3>
         </button>
       </NavLink>
       <NavLink to="/about">

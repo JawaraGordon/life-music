@@ -15,7 +15,7 @@ function Account({ user, setUser, onLogin }) {
   // console.log("account user", user);
 
   useEffect(() => {
-    fetch(`/users/${user.id}`)
+    fetch(`/user/${user.id}`)
       .then((resp) => resp.json())
       .then((user) => setFormData(user));
   }, [user.id]);
@@ -31,7 +31,7 @@ function Account({ user, setUser, onLogin }) {
   function handleUpdate(e) {
     e.preventDefault();
 
-    fetch(`/users/${user.id}`, {
+    fetch(`/user/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function Account({ user, setUser, onLogin }) {
   }
 // delete the user
   const handleDelete = () => {
-    fetch(`users/${user.id}`, {
+    fetch(`user/${user.id}`, {
       method: 'DELETE',
       headers: { Accept: 'application/json' },
     });
@@ -69,8 +69,8 @@ function Account({ user, setUser, onLogin }) {
     }
   }
 
-  function pushToHome() {
-    history.push('/home');
+  function goBack() {
+    history.push('/music');
   }
 
   return (
@@ -142,10 +142,10 @@ function Account({ user, setUser, onLogin }) {
             className="header-btn"
             variant="contained"
             color="secondary"
-            onClick={pushToHome}
+            onClick={goBack}
           >
             
-            Home
+            Back
           </Button>
           {' '} 
           
