@@ -16,6 +16,7 @@ function MyPlayLists() {
     });
   }, []);
 
+  
 const deletePlayList = (id) => {
   fetch(`playlists/${id}`, {
     method: 'DELETE',
@@ -24,7 +25,7 @@ const deletePlayList = (id) => {
     prevPlaylist.filter(playlist => playlist.id !== id)))
 }
 
-  console.log("Myplaylists", userPlaylists)
+  // console.log("Myplaylists", userPlaylists)
 
   return (
     <>

@@ -7,8 +7,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 
-function SavePlaylistDialog({open,setOpen, savePlayList }) {
-  
+function SavePlaylistDialog({ savePlayList, randomSongs }) {
+  const [open, setOpen] = React.useState(false);
 
 
   const handleClickOpen = () => {
@@ -16,8 +16,11 @@ function SavePlaylistDialog({open,setOpen, savePlayList }) {
   };
 
   const handleClose = () => {
+    savePlayList()
     setOpen(false);
   };
+
+  console.log("Save Playlist dialog", randomSongs)
 
   return (
     <div>
@@ -44,7 +47,7 @@ function SavePlaylistDialog({open,setOpen, savePlayList }) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => savePlayList()} autoFocus>
+          <Button onClick={() =>handleClose()} autoFocus>
             Ok
           </Button>
         </DialogActions>

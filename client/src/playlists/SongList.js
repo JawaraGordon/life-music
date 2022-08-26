@@ -4,58 +4,10 @@ import Box from '@mui/material/Box';
 import SavePlaylistDialog from '../components/SavePlaylistDialog'
 
 function SongList({ songs, user }) {
-  const [open, setOpen] = React.useState(false);
 
-    // randomly sort array of songs
-    const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4);
-    console.log('randomsongs', randomSongs);
-
-    // function to POST playlist from onClick listener
-  const saveFaveSong = (songObj) => {
-    fetch('/favorite_songs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(songObj),
-    });
-  };
-
-
-  // function to POST playlist from onClick listener
-  const savePlayList = () => {
-    fetch('/playlists', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        user_id: user.id}),
-    })
-    .then((resp) => resp.json())
-    .then (playlist => {
-
-      console.log("Songlist save playlist", playlist)
-      randomSongs.map((song) => {
-
-        saveFaveSong({
-
-          playlist_id: playlist.id,
-          song_id: song.id
-
-        })
-
-      }
-      
-    )
-    setOpen(false)})
-
-  };
-  
-  // console.log('randomsong data', randomSongData);
-
+  // randomly sort array of songs
+  const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4);
+  // console.log('songlist randomsongs', randomSongs);
 
   //create song player JSX
   const songPlayer = randomSongs.map((s) => (
@@ -76,7 +28,53 @@ function SongList({ songs, user }) {
     return song.album_img;
   });
 
+  // function to POST playlist from onClick 
+  const savePlayList = () => {
+    fetch('/playlists', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        user_id: user.id}),
+    })
+    .then((resp) => resp.json())
+    .then (playlist => {
 
+      
+      
+      // console.log("Songlist save playlist", playlist)
+      console.log("Songlist save playlist before function", randomSongs)
+
+      randomSongs.map((song) => {
+
+        saveFaveSong({
+
+          playlist_id: playlist.id,
+          song_id: song.id
+
+        })
+
+      }
+    )})
+
+     // function to POST favorite_songs
+     function saveFaveSong(songObj) {
+      fetch('/favorite_songs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(songObj),
+      });
+    };
+    console.log("Songlist save playlist after function", randomSongs)
+  };
+
+  
+  // console.log('randomsong data', randomSongData);
   // console.log('Songlist user', user);
   // console.log("songlist PL DATA", playListData)
 
@@ -87,11 +85,8 @@ function SongList({ songs, user }) {
       <div className="song-container">
         {songPlayer}
         <Box m={2}>
-          <SavePlaylistDialog
-          songs={songs} 
-          user={user}  
-          open={open}
-          setOpen={setOpen}
+          <SavePlaylistDialog 
+          randomSongs={randomSongs}
           savePlayList={savePlayList}
           onClick={() => savePlayList()} variant="contained">
             Save
