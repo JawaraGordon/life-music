@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
-import AlertDialog from '../components/DeleteDialog';
+import DeleteDialog from '../components/DeleteDialog';
 
 function Account({ user, setUser }) {
   const [formData, setFormData] = useState({
@@ -151,7 +151,7 @@ function Account({ user, setUser }) {
           </Button>
           {' '} 
           
-          <AlertDialog user={user}
+          <DeleteDialog user={user}
             className="header-btn"
             variant="contained"
             color="secondary"
@@ -159,7 +159,7 @@ function Account({ user, setUser }) {
           >
             
             Delete
-          </AlertDialog>
+          </DeleteDialog>
 
         </form>
         <div>

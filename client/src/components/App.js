@@ -8,7 +8,7 @@ import Music from '../pages/Music';
 import About from '../pages/About';
 import Account from '../pages/Account';
 import MyPlayLists from '../pages/MyPlayLists';
-import AlertDialog from './DeleteDialog';
+import DeleteDialog from './DeleteDialog';
 
 function App() {
   // add state for songs player
@@ -30,7 +30,6 @@ function App() {
   // console.log(user);
   // fetch all songs
   useEffect(() => {
-
     fetch('/songs').then((resp) => {
       if (resp.ok) {
         resp.json().then((songs) => {
@@ -46,69 +45,36 @@ function App() {
   const handleChillClick = () => {
     // setCurrentMood(() => 2);
 
-    const filteredSongs = songs.filter(
-      (song) => song.mood_rank === 2
-    );
+    const filteredSongs = songs.filter((song) => song.mood_rank === 2);
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
   const handleEnergizedClick = () => {
     // setCurrentMood(() => 3);
 
-    const filteredSongs = songs.filter(
-      (song) => song.mood_rank === 3
-    );
+    const filteredSongs = songs.filter((song) => song.mood_rank === 3);
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
   const handleFocusedClick = () => {
     // setCurrentMood(() => 1);
-    const filteredSongs = songs.filter(
-      (song) => song.mood_rank === 1
-    );
+    const filteredSongs = songs.filter((song) => song.mood_rank === 1);
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
   const handleSadClick = () => {
     // setCurrentMood(() => 4);
-    
-    const filteredSongs = songs.filter(
-      (song) => song.mood_rank === 4
-    );
+
+    const filteredSongs = songs.filter((song) => song.mood_rank === 4);
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
   const handleHappyClick = () => {
     // setCurrentMood(() => 5);
-    const filteredSongs = songs.filter(
-      (song) => song.mood_rank === 5
-    );
+    const filteredSongs = songs.filter((song) => song.mood_rank === 5);
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
-
-  // const handleClockClick = () => {
-
-  //     if (localTime === "AM") {
-  //       setCurrentMood(1);
-  //     } else if
-  //     (localTime === "PM") {
-  //       setCurrentMood(3);
-  //     } else
-  //     setCurrentMood(2)
-
-  //   fetch('/songs').then((resp) => {
-  //     if (resp.ok) {
-  //       resp.json().then((songs) => setSongs(songs));
-  //     }
-  //   });
-
-  //   const filteredSongs = songs.filter(
-  //     (song) => song.mood_rank === currentMood
-  //   );
-  //   setSongList(filteredSongs);
-  //   setIsShown((currentState) => !currentState);
-  // };
 
   if (!user)
     return (
@@ -121,7 +87,10 @@ function App() {
     <>
       <Header
         setUser={setUser}
-        // handleClockClick={handleClockClick}
+        songs={songs}
+        setSongList={setSongList}
+        currentMood={currentMood}
+        setCurrentMood={setCurrentMood}
       />
       <NavBar user={user} setUser={setUser} />
       <MoodBar

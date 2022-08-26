@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import SavePlaylistDialog from '../components/SavePlaylistDialog'
 
 function SongList({ songs, user }) {
-  // force render based on song array state
-  // const [loaded, setLoaded] = useState([]);
+  const [open, setOpen] = React.useState(false);
 
     // randomly sort array of songs
     const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4);
@@ -48,7 +48,9 @@ function SongList({ songs, user }) {
         })
 
       }
-    )})
+      
+    )
+    setOpen(false)})
 
   };
   
@@ -85,9 +87,15 @@ function SongList({ songs, user }) {
       <div className="song-container">
         {songPlayer}
         <Box m={2}>
-          <Button onClick={() => savePlayList()} variant="contained">
+          <SavePlaylistDialog
+          songs={songs} 
+          user={user}  
+          open={open}
+          setOpen={setOpen}
+          savePlayList={savePlayList}
+          onClick={() => savePlayList()} variant="contained">
             Save
-          </Button>
+          </SavePlaylistDialog>
         </Box>
         {/* <Box m={2}>
         <Button variant="contained">Edit</Button>
