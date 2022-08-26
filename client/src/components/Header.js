@@ -15,13 +15,16 @@ function Header({ setUser, handleClockClick }) {
     });
   }
 
+
+  
+
   return (
     <>
       <div className="header">
        
-          <a className="header-img" href="/home">
+          {/* <a className="header-img" href="/music"> */}
             <img src={LifeMusicLogo} alt="logo" />
-          </a>
+          {/* </a> */}
 
           <Clock
           // handleClockClick={handleClockClick}
@@ -30,6 +33,7 @@ function Header({ setUser, handleClockClick }) {
         <button onClick={handleLogoutClick} className="header-btn">
           Logout
         </button>
+        
       </div>
     </>
   );

@@ -39,7 +39,7 @@ function SignUpForm({ setUser }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => setUser(user));
-        history.push('/home');
+        history.push('/music');
       } else {
         r.json().then((err) => setErrors(err.errors));
         setTimeout(() => setErrors([]), 3000);

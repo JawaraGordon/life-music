@@ -1,5 +1,6 @@
 class PlaylistsController < ApplicationController
     skip_before_action :authorize, only: [:create, :index, :show, :playlist]
+    
     def create
         playlist = Playlist.create(playlist_params)
         # debugger

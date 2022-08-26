@@ -8,6 +8,7 @@ import Music from '../pages/Music';
 import About from '../pages/About';
 import Account from '../pages/Account';
 import MyPlayLists from '../pages/MyPlayLists';
+import AlertDialog from './DeleteDialog';
 
 function App() {
   // add state for songs player
@@ -43,44 +44,44 @@ function App() {
   // console.log('App user', user);
 
   const handleChillClick = () => {
-    setCurrentMood(() => 2);
+    // setCurrentMood(() => 2);
 
     const filteredSongs = songs.filter(
-      (song) => song.mood_rank === currentMood
+      (song) => song.mood_rank === 2
     );
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
   const handleEnergizedClick = () => {
-    setCurrentMood(() => 3);
+    // setCurrentMood(() => 3);
 
     const filteredSongs = songs.filter(
-      (song) => song.mood_rank === currentMood
+      (song) => song.mood_rank === 3
     );
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
   const handleFocusedClick = () => {
-    setCurrentMood(() => 1);
+    // setCurrentMood(() => 1);
     const filteredSongs = songs.filter(
-      (song) => song.mood_rank === currentMood
+      (song) => song.mood_rank === 1
     );
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
   const handleSadClick = () => {
-    setCurrentMood(() => 4);
+    // setCurrentMood(() => 4);
     
     const filteredSongs = songs.filter(
-      (song) => song.mood_rank === currentMood
+      (song) => song.mood_rank === 4
     );
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);
   };
   const handleHappyClick = () => {
-    setCurrentMood(() => 5);
+    // setCurrentMood(() => 5);
     const filteredSongs = songs.filter(
-      (song) => song.mood_rank === currentMood
+      (song) => song.mood_rank === 5
     );
     setSongList(filteredSongs);
     setIsShown((currentState) => !currentState);

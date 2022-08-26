@@ -1,4 +1,5 @@
 import { Container } from '@mui/system';
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import React, { useEffect, useState } from 'react';
 import SongList from '../playlists/SongList';
@@ -6,15 +7,24 @@ import SongList from '../playlists/SongList';
 function MyPlayLists() {
   const [userPlaylists, setUserPlaylists] = useState([]);
 
+  //fetch all playlists 
   useEffect(() => {
-    fetch('/playlists').then((resp) => {
+    fetch('/playlists/').then((resp) => {
       if (resp.ok) {
         resp.json().then((playlists) => setUserPlaylists(playlists));
       }
     });
   }, []);
 
-  // console.log("Myplaylists", userPlaylists)
+const deletePlayList = (id) => {
+  fetch(`playlists/${id}`, {
+    method: 'DELETE',
+    headers: { Accept: 'application/json' },
+  }).then(() => setUserPlaylists (prevPlaylist => 
+    prevPlaylist.filter(playlist => playlist.id !== id)))
+}
+
+  console.log("Myplaylists", userPlaylists)
 
   return (
     <>
@@ -23,13 +33,14 @@ function MyPlayLists() {
           <h2>Playlists</h2>
           <div>
             <div className="playlist-line"></div>
-            {userPlaylists.map((playlist, index) => {
+            {userPlaylists.map((p) => {
               return (
-                <div key={index}>
-                  <h2>{playlist.name}</h2>
-                  {playlist.favorite_songs.map((s, index) => {
+                <div key={p.id}>
+                  <h2>{p.name}</h2>
+                  {p.favorite_songs.map((s) => {
                     return (
-                      <div key={index}>
+                      <div key={s.id}>
+                        <img src={s.album_img}/>
                         <h2>{s.song_name}</h2>
                         <audio controls loop controlsList="nodownload">
                           <source src={s.song_url} type="audio/mpeg;" />
@@ -37,6 +48,16 @@ function MyPlayLists() {
                       </div>
                     );
                   })}
+                   <Box m={2}>
+          <Button 
+          
+          className="header-btn"
+            variant="contained"
+            color="primary"
+            onClick={() => deletePlayList(p.id)}>
+            Delete
+          </Button>
+        </Box>
                   <br></br>
                   <div className="playlist-line"></div>
                 </div>

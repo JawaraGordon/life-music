@@ -6,18 +6,22 @@ function SongList({ songs, user }) {
   // force render based on song array state
   // const [loaded, setLoaded] = useState([]);
 
-  // set playlist data state
-  // const [playListData, setPlaylistData] = useState({
-  //   name: '',
-  //   image_url: '',
-  //   mood_rank: '',
-  //   user_id: '',
-  //   song_id: '',
-  // });
-
     // randomly sort array of songs
     const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4);
     console.log('randomsongs', randomSongs);
+
+    // function to POST playlist from onClick listener
+  const saveFaveSong = (songObj) => {
+    fetch('/favorite_songs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(songObj),
+    });
+  };
+
 
   // function to POST playlist from onClick listener
   const savePlayList = () => {
@@ -33,7 +37,7 @@ function SongList({ songs, user }) {
     .then((resp) => resp.json())
     .then (playlist => {
 
-      console.log(playlist.id)
+      console.log("Songlist save playlist", playlist)
       randomSongs.map((song) => {
 
         saveFaveSong({
@@ -47,18 +51,7 @@ function SongList({ songs, user }) {
     )})
 
   };
-  // function to POST playlist from onClick listener
-  const saveFaveSong = (songObj) => {
-    fetch('/favorite_songs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(songObj),
-    });
-  };
-
+  
   // console.log('randomsong data', randomSongData);
 
 

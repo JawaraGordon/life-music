@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
+import AlertDialog from '../components/DeleteDialog';
 
-function Account({ user, setUser, onLogin }) {
+function Account({ user, setUser }) {
   const [formData, setFormData] = useState({
     id: '',
     username: '',
@@ -10,12 +11,12 @@ function Account({ user, setUser, onLogin }) {
     bio: '',
     age: '',
   });
+  
+  // console.log("account user", user.id);
   const history = useHistory();
 
-  // console.log("account user", user);
-
   useEffect(() => {
-    fetch(`/user/${user.id}`)
+    fetch(`/users/${user.id}`)
       .then((resp) => resp.json())
       .then((user) => setFormData(user));
   }, [user.id]);
@@ -31,7 +32,7 @@ function Account({ user, setUser, onLogin }) {
   function handleUpdate(e) {
     e.preventDefault();
 
-    fetch(`/user/${user.id}`, {
+    fetch(`/users/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +45,7 @@ function Account({ user, setUser, onLogin }) {
       .then((updatedUser) => {
         onUpdate(updatedUser);
       });
-    history.push('/home');
+    history.push('/music');
   }
 
   function onUpdate(updatedUser) {
@@ -52,13 +53,14 @@ function Account({ user, setUser, onLogin }) {
   }
 // delete the user
   const handleDelete = () => {
-    fetch(`user/${user.id}`, {
+    fetch(`users/${user.id}`, {
       method: 'DELETE',
       headers: { Accept: 'application/json' },
     });
     window.location.reload();
   };
 
+  //refactored into mui alertdialog 
   function confirmAction() {
     let confirmAction = window.confirm('Are you sure?');
     if (confirmAction) {
@@ -149,7 +151,7 @@ function Account({ user, setUser, onLogin }) {
           </Button>
           {' '} 
           
-          <Button
+          <AlertDialog user={user}
             className="header-btn"
             variant="contained"
             color="secondary"
@@ -157,7 +159,8 @@ function Account({ user, setUser, onLogin }) {
           >
             
             Delete
-          </Button>
+          </AlertDialog>
+
         </form>
         <div>
 
