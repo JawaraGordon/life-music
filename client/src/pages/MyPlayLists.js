@@ -14,10 +14,9 @@ function MyPlayLists({user}) {
     fetch(`/users/${user.id}/playlists/`).then((resp) => {
       if (resp.ok) {
         resp.json().then((playlists) => {
-          // console.log("fetch return" , playlists[0].favorite_songs)
-          // playlists = playlists.map((playlist)=> 
-          // playlist.favorite_songs.sort((a,b)=> a.id - b.id))
-          setUserPlaylists(playlists)
+          
+          console.log("fetch return" , playlists)
+          setUserPlaylists(playlists.sort(function(a, b){return b-a}))
         
         })}
     });

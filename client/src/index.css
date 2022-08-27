@@ -383,10 +383,12 @@ button {
 
 .song-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   grid-template-columns: auto;
   align-items: center;
   background-color: #000;
+  
 
 }
 
@@ -400,6 +402,7 @@ figure {
   justify-items: center;
   width: 18rem;
   text-align: center;
+  
 }
 
 #playlist{
@@ -435,26 +438,83 @@ figure {
 } */
 
 @media(max-width: 766px) {
+
+  .mobile {
+    display: flex;
+    margin: 2rem;
+    overflow: hidden;
+
+}
   .navbar {
+      display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       height: auto;
       padding: 0;
       margin: 0;
   }
-
-  
   .mood-bar {
       flex-direction: column;
       grid-template-columns: 1fr, 1fr, 1fr;
       height: auto;
-      padding: 1rem;
-      margin: 0;
+      padding: 0.5rem;
+      margin-right: 2rem;
+      position: sticky;
+      border-radius: 10px;
   }
 
   .home-container {
       flex-direction: column;
-  
+    
   }
 
+  .profile {
+    display: flex;
+    flex-direction: row;
+    column-count: 2;
+    align-items: center;
+    margin: 3rem;
+    height: 150px;
+    width: auto;
+    background-color: #0bff99 ;
+    text-align: center;
+    border-radius: 10px;
+    font-size: small;
+  }
+  .profile img{
+    
+    width: 40vw;
+    
+  }
+  .profile h3{
+    visibility: hidden;
+  }
+  
+  .profile text{
+    visibility: hidden;
+  }
+
+  .user-img{
+    height: auto;
+    max-width: 30vw;
+  padding: 1rem;
+  border-radius: 50px;
+    
+    
+  }
+
+
+  .song-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem;
+    height: fit-content;
+    grid-template-columns: auto;
+    background-color: #000;
+    text-align: center;
+    font-size: small;
+  
+  }
 }
 

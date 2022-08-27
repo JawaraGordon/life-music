@@ -96,7 +96,8 @@ function App() {
         setSongList={setSongList}
         currentMood={currentMood}
         setCurrentMood={setCurrentMood}
-      />
+        />
+        <div className="mobile">
       <NavBar user={user} setUser={setUser} />
       <MoodBar
         user={user}
@@ -107,7 +108,7 @@ function App() {
         handleSadClick={handleSadClick}
         handleHappyClick={handleHappyClick}
       />
-
+  </div>
       <Switch>
         <Route exact path="/music">
           <Music

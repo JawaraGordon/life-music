@@ -1,16 +1,16 @@
 import Box from '@mui/material/Box';
 import SavePlaylistDialog from '../components/SavePlaylistDialog'
 
-function SongList({ songs, user, addPlaylistToUser }) {
+function SongList({ songs, user }) {
 
   // randomly sort array of songs
-  const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4);
+  const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4)
+  ;
   console.log('songlist randomsongs', randomSongs);
 
   //create song player JSX
   const songPlayer = randomSongs.map((s) => (
-        <ul>
-          <li className="current-song">
+        
     <figure key={s.id}>
       <figcaption>
         <h2>{s.title}</h2>
@@ -23,8 +23,7 @@ function SongList({ songs, user, addPlaylistToUser }) {
       <div>
       </div>
     </figure>
-        </li>
-        </ul>
+        
   ));
 
   // map song images
@@ -46,7 +45,6 @@ function saveFaveSong(songObj) {
     body: JSON.stringify(songObj),
   });
 };
-
     fetch('/playlists', {
       method: 'POST',
       headers: {
@@ -62,25 +60,20 @@ function saveFaveSong(songObj) {
       // console.log("Songlist save playlist", playlist)
       console.log("Songlist save playlist before function", randomSongs)
 
-
-
-
-      randomSongs.map((song) => 
+      randomSongs.sort((a,b)=> a.id - b.id).map((song) => 
+      
       
         saveFaveSong(
-          
           {
+          
           song_id: song.id,
           playlist_id: playlist.id
         })
-      
     )})
 
      
     console.log("Songlist save playlist after function", randomSongs)
   };
-
-  
 
   
   // console.log('randomsong data', randomSongData);

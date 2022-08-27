@@ -19,7 +19,7 @@ function NavBar() {
       </NavLink>
       <NavLink to="/playlists">
         <button className="nav-btn">
-          <h3>My Playlists</h3>
+          <h3>Playlists</h3>
         </button>
       </NavLink>
       <NavLink to="/account">

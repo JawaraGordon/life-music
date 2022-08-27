@@ -8,7 +8,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 
-function SavePlaylistDialog({ savePlayList, randomSongs }) {
+function SavePlaylistDialog({ savePlayList }) {
   const [open, setOpen] = React.useState(false);
 
 
@@ -45,7 +45,7 @@ function SavePlaylistDialog({ savePlayList, randomSongs }) {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Saved to <i>"My Playlists"</i>
+            Saved to <i>"Playlists"</i>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
