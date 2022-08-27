@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
+import AccessTimeFilledSharp from '@mui/icons-material/AccessTimeFilledSharp';
 
 function Clock({ songs, setSongList, currentMood, setCurrentMood }) {
   const [date, setDate] = useState(new Date());
+
+  
 
   const localTime = date.toLocaleTimeString([], {
     hour: '2-digit',
@@ -51,15 +54,21 @@ function Clock({ songs, setSongList, currentMood, setCurrentMood }) {
   }, []);
 
   return (
+    <>
     <Button
       onClick={() => handleClockClick(localTime)}
       variant="contained"
       color="secondary"
       size="small"
-    >
+      
+      >
+      {<AccessTimeFilledSharp/>}
       <h2>{localTime}</h2>
     </Button>
+    </>
   );
+  
 }
+
 
 export default Clock;

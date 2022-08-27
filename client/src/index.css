@@ -56,9 +56,6 @@ body {
 
 
 
-
-
-
 p {
   font-size: 1rem;
   color: #fff;
@@ -266,6 +263,7 @@ button {
 }
 
 
+
 .header-btn{
   position: relative;
   background-color: #0bff99;
@@ -356,7 +354,11 @@ button {
   align-items: center;
   background-color: #9414b2;
   margin: 1rem;
-  padding: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-items: center;
+  width: 25rem;
+  text-align: center;
 }
 .playlist-line {
   display: flex;
@@ -364,11 +366,27 @@ button {
   align-items: center;
   border:#0bff99 solid 1px;
 }
+
+.playlist-img{
+  display: block;
+  width: 90%;
+  max-height: 250px;
+  padding-left: 2rem;
+ 
+}
+
 .song-container {
   display: flex;
   flex-direction: column;
+  grid-template-columns: auto;
   align-items: center;
   background-color: #000;
+
+}
+
+figure {
+  width: 100%;
+
 }
 
 .song-player {

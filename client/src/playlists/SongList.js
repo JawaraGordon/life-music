@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import SavePlaylistDialog from '../components/SavePlaylistDialog'
 
-function SongList({ songs, user }) {
+function SongList({ songs, user, addPlaylistToUser }) {
 
   // randomly sort array of songs
   const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4);
@@ -42,35 +40,32 @@ function SongList({ songs, user }) {
     .then((resp) => resp.json())
     .then (playlist => {
 
-      
-      
       // console.log("Songlist save playlist", playlist)
       console.log("Songlist save playlist before function", randomSongs)
 
-      randomSongs.map((song) => {
+      randomSongs.map((song) => 
 
         saveFaveSong({
-
           playlist_id: playlist.id,
           song_id: song.id
-
         })
-
-      }
+      
     )})
 
-     // function to POST favorite_songs
-     function saveFaveSong(songObj) {
-      fetch('/favorite_songs', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(songObj),
-      });
-    };
+     
     console.log("Songlist save playlist after function", randomSongs)
+  };
+
+  // function to POST favorite_songs
+  function saveFaveSong(songObj) {
+    fetch('/favorite_songs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(songObj),
+    });
   };
 
   
@@ -78,12 +73,16 @@ function SongList({ songs, user }) {
   // console.log('Songlist user', user);
   // console.log("songlist PL DATA", playListData)
 
+
+  if (!songPlayer.length ) 
+return ("")
+
   return (
     <>
-      <img src={songImg[0]} className="song-img" />
+      <img src={songImg[0]} className="song-img" alt="album art"/>
 
       <div className="song-container">
-        {songPlayer}
+        {songPlayer} 
         <Box m={2}>
           <SavePlaylistDialog 
           randomSongs={randomSongs}
@@ -92,9 +91,6 @@ function SongList({ songs, user }) {
             Save
           </SavePlaylistDialog>
         </Box>
-        {/* <Box m={2}>
-        <Button variant="contained">Edit</Button>
-      </Box> */}
       </div>
     </>
   );

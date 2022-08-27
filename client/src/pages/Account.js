@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
+import ArrowUpwardRounded from '@mui/icons-material/ArrowUpwardRounded';
+import ArrowLeft from '@mui/icons-material/ArrowLeft';
 import { useHistory } from 'react-router-dom';
 import DeleteDialog from '../components/DeleteDialog';
 
@@ -133,7 +135,7 @@ function Account({ user, setUser }) {
             className="header-btn"
             variant="contained"
             color="secondary"
-            
+            startIcon={<ArrowUpwardRounded/>}
             type="submit"
           >
             Update
@@ -144,6 +146,7 @@ function Account({ user, setUser }) {
             className="header-btn"
             variant="contained"
             color="secondary"
+            startIcon={<ArrowLeft/>}
             onClick={goBack}
           >
             
@@ -155,6 +158,7 @@ function Account({ user, setUser }) {
             className="header-btn"
             variant="contained"
             color="secondary"
+            
             onClick={() => confirmAction(user.id)}
           >
             

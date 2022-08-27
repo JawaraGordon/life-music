@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
+import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
@@ -10,7 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 function DeleteDialog({ user }) {
   const [open, setOpen] = React.useState(false);
 
-  const history = useHistory()
+
   // console.log('alert user', user.id);
 
   const handleClickOpen = () => {
@@ -37,6 +37,7 @@ function DeleteDialog({ user }) {
         variant="contained"
         color="secondary"
         onClick={handleClickOpen}
+        startIcon={<DeleteOutlined/>}
       >
         Delete
       </Button>

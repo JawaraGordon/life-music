@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
+import SaveOutlined from '@mui/icons-material/SaveOutlined';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -20,7 +21,7 @@ function SavePlaylistDialog({ savePlayList, randomSongs }) {
     setOpen(false);
   };
 
-  console.log("Save Playlist dialog", randomSongs)
+  // console.log("Save Playlist dialog", randomSongs)
 
   return (
     <div>
@@ -28,6 +29,7 @@ function SavePlaylistDialog({ savePlayList, randomSongs }) {
         className="header-btn"
         variant="contained"
         color="secondary"
+        startIcon={<SaveOutlined/>}
         onClick={handleClickOpen}
       >
         Save
