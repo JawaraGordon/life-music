@@ -413,7 +413,7 @@ figure {
   color:blue;
 }
 
-@media only screen and (min-width: 1000) {
+/* @media only screen and (min-width: 1000) {
   .login-container {
   flex-direction: column;
   justify-content: space-between;
@@ -432,5 +432,29 @@ figure {
   height: 100%;
   overflow: hidden;
   }
+} */
+
+@media(max-width: 766px) {
+  .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 0;
+      margin: 0;
+  }
+
+  
+  .mood-bar {
+      flex-direction: column;
+      grid-template-columns: 1fr, 1fr, 1fr;
+      height: auto;
+      padding: 1rem;
+      margin: 0;
+  }
+
+  .home-container {
+      flex-direction: column;
+  
+  }
+
 }
 
