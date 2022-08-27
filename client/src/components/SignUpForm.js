@@ -61,6 +61,7 @@ function SignUpForm({ setUser }) {
               <input
                 className="input-text"
                 placeholder="Username"
+                required
                 type="text"
                 id="username"
                 autoComplete="off"
@@ -73,6 +74,7 @@ function SignUpForm({ setUser }) {
               <input
                 className="input-text"
                 placeholder="Password"
+                required
                 type="password"
                 id="password"
                 value={password}
@@ -85,6 +87,7 @@ function SignUpForm({ setUser }) {
               <input
                 className="input-text"
                 placeholder="Confirm Password"
+                required
                 type="password"
                 id="password_confirmation"
                 value={passwordConfirmation}
@@ -97,6 +100,7 @@ function SignUpForm({ setUser }) {
               <input
                 className="input-text"
                 placeholder="Profile Image URL"
+                required
                 type="text"
                 id="imageUrl"
                 value={imageUrl}
@@ -108,6 +112,7 @@ function SignUpForm({ setUser }) {
               <input
                 className="input-text"
                 placeholder="Bio"
+                required
                 type="text"
                 id="bio"
                 value={bio}
@@ -119,8 +124,10 @@ function SignUpForm({ setUser }) {
               <input
                 className="input-text"
                 placeholder="Age"
+                required
                 type="number"
                 id="age"
+                min="13" max="115"
                 value={age}
                 onChange={(e) => setAge(Number(e.target.value))}
               />
