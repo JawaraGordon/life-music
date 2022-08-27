@@ -36,7 +36,7 @@ const deletePlayList = (id) => {
 if (!userPlaylists.length || !userPlaylists) 
 return (<h2 className="playlists-container">Save a Playlist...</h2>)
 
-  console.log("Myplaylists", userPlaylists)
+  // console.log("Myplaylists", userPlaylists)
 
   return (
     <>

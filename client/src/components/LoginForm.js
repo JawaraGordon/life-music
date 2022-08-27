@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
-import FormLabel from '@mui/material/FormLabel';
 import { useHistory } from 'react-router-dom';
 import LifeMusicLogin from '../img/LifeMusicLogin.png';
 
@@ -9,13 +8,13 @@ function LoginForm({ setUser }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+
 
   const history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true);
+    
     fetch('/login', {
       method: 'POST',
       headers: {
@@ -23,7 +22,7 @@ function LoginForm({ setUser }) {
       },
       body: JSON.stringify({ username, password }),
     }).then((resp) => {
-      setIsLoading(false);
+      
       if (resp.ok) {
         resp.json().then((user) => {
           setUser(user);
@@ -46,7 +45,7 @@ function LoginForm({ setUser }) {
           <form onSubmit={handleSubmit}>
             <div>
               <input
-                // className="input"
+                
                 type="text"
                 id="username"
                 autoComplete="off"
@@ -59,7 +58,7 @@ function LoginForm({ setUser }) {
             <br></br>
             <div>
               <input
-                // className="input"
+                
                 type="password"
                 id="password"
                 autoComplete="current-password"

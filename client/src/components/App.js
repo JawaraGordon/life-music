@@ -39,13 +39,11 @@ function App() {
     });
   }, []);
 
-
   const addPlaylistToUser = (newPlaylist) => {
 
     setUser((prevUser) => ({...prevUser, "playlists": [...prevUser.playlists,newPlaylist]}))
 
   }
-
   // console.log('App songs', songs);
   // console.log('App user', user);
 

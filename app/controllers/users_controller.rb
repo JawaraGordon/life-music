@@ -20,6 +20,14 @@ class UsersController < ApplicationController
       end
   end
 
+  def playlists
+    if current_user
+      render json: current_user.playlists, status: :ok
+    else
+      render json: { error: "User not logged in"}, status: :unauthorized
+    end
+  end
+
     def update
       user = User.find(params[:id])
       user.update!(user_params)
