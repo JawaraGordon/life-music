@@ -8,7 +8,8 @@ import Music from '../pages/Music';
 import About from '../pages/About';
 import Account from '../pages/Account';
 import MyPlayLists from '../pages/MyPlayLists';
-import DeleteDialog from './DeleteDialog';
+import AllSongs from '../pages/AllSongs';
+import SongsByGenre from '../pages/SongsByMood';
 
 function App() {
   // add state for songs player
@@ -130,6 +131,12 @@ function App() {
         </Route>
         <Route path="/playlists">
           <MyPlayLists user={user} setUser={setUser} songList={songList} />
+        </Route>
+        <Route path="/allsongs">
+          <AllSongs user={user} songs={songs} />
+        </Route>
+        <Route path="/genre">
+          <SongsByGenre user={user} songs={songs} />
         </Route>
       </Switch>
     </>

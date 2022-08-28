@@ -75,7 +75,7 @@ Song.create(title: "Tiamut",artist: "DJ Imminent", album_img: "https://source.un
 Song.create(title: "It's Too Late For You",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?angry", length:231, mood_rank:4, bpm:70, key_of_song:"Em", song_url:"https://jawaragordon.com/music/intense/It%27s%20TOO%20late%20for%20YOU.mp3" )
 Song.create(title: "Tryna Get Paid",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?angry", length:231, mood_rank:4, bpm:70, key_of_song:"Em", song_url:"https://jawaragordon.com/music/intense/Tryna%20Get%20Paid.mp3" )
 Song.create(title: "Starduster",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?angry", length:231, mood_rank:4, bpm:70, key_of_song:"Em", song_url:"https://jawaragordon.com/music/intense/Starduster.mp3" )
-Song.create(title: "TRAP DOORZhttps://jawaragordon.com/music/intense/TRAP%20DOORZ.mp3" )
+Song.create(title: "TRAP DOORZ", song_url:"https://jawaragordon.com/music/intense/TRAP%20DOORZ.mp3" )
 Song.create(title: "Don't Push Enter",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?angry", length:231, mood_rank:4, bpm:70, key_of_song:"Em", song_url:"https://jawaragordon.com/music/intense/Dont%20Push%20Enter.mp3" )
 Song.create(title: "Hold The Light",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?angry", length:231, mood_rank:4, bpm:70, key_of_song:"Em", song_url:"https://jawaragordon.com/music/intense/Hold%20The%20Light.mp3" )
 Song.create(title: "Collectors Theme",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?angry", length:231, mood_rank:4, bpm:70, key_of_song:"Em", song_url:"https://jawaragordon.com/music/intense/Collectors%20Theme.mp3" )

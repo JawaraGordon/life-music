@@ -392,6 +392,22 @@ button {
 
 }
 
+.songs-container {
+  display: grid;
+  justify-content: center;
+  background-color: #000;
+  
+}
+
+.allsongs-img{
+  display:block;
+  justify-self: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 5rem;
+ 
+}
+
 figure {
   width: 100%;
 

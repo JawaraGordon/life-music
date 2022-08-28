@@ -84,7 +84,7 @@ return ("")
     <>
       <img src={songImg[0]} className="song-img" alt="album art"/>
 
-      <div className="song-container">
+      <div className="songs-container">
     <Box m={2}>
           <BasicMenu 
           savePlayList={savePlayList}
