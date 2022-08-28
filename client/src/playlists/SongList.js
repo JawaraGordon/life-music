@@ -87,9 +87,8 @@ return ("")
       <div className="songs-container">
     <Box m={2}>
           <BasicMenu 
-          savePlayList={savePlayList}
            variant="contained">
-            Save
+            Songs
           </BasicMenu>
         </Box>
         {songPlayer} 

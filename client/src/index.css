@@ -242,6 +242,7 @@ h4{
   justify-self: left;
   max-width: 10rem;
   max-height: 5rem;
+  border-radius: 20%;
 }
 
 button {

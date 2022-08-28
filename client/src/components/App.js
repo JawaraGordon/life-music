@@ -132,10 +132,10 @@ function App() {
         <Route path="/playlists">
           <MyPlayLists user={user} setUser={setUser} songList={songList} />
         </Route>
-        <Route path="/allsongs">
+        <Route path="/songs">
           <AllSongs user={user} songs={songs} />
         </Route>
-        <Route path="/genre">
+        <Route path="/moods">
           <SongsByGenre user={user} songs={songs} />
         </Route>
       </Switch>

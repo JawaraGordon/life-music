@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import AccessTimeFilledSharp from '@mui/icons-material/AccessTimeFilledSharp';
+import timehop from '../img/timehop.png'
 
 function Clock({ songs, setSongList, currentMood, setCurrentMood }) {
   const [date, setDate] = useState(new Date());
@@ -55,6 +56,11 @@ function Clock({ songs, setSongList, currentMood, setCurrentMood }) {
       >
       {<AccessTimeFilledSharp/>}
       <h2>{localTime}</h2>
+      <img
+        src={timehop}
+        className="header-img"
+        alt="album art"
+      />
     </Button>
     </>
   );

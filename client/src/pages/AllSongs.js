@@ -1,4 +1,6 @@
-import allsongsbanner from '../img/allsongsbanner.png'
+import Box from '@mui/material/Box';
+import BasicMenu from '../components/BasicMenu';
+import allsongsbanner from '../img/allsongsbanner.png';
 
 function AllSongs({ songs, user }) {
   const songPlayer = songs
@@ -6,7 +8,7 @@ function AllSongs({ songs, user }) {
     .map((s) => (
       <figure key={s.id}>
         <figcaption>
-          <h2>{s.title}</h2>
+          <h4>{s.title}</h4>
         </figcaption>
         <div className="song-player">
           <audio controls loop controlsList="nodownload">
@@ -21,13 +23,12 @@ function AllSongs({ songs, user }) {
 
   return (
     <>
-      <img
-        src={allsongsbanner}
-        className="allsongs-img"
-        alt="album art"
-      />
+      <img src={allsongsbanner} className="allsongs-img" alt="album art" />
 
       <div className="songs-container">
+        <Box m={2}>
+          <BasicMenu variant="contained">Songs</BasicMenu>
+        </Box>
         {songPlayer}
 
         <br></br>

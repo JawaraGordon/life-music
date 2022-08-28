@@ -19,11 +19,11 @@ function BasicMenu() {
 
   const handleTopClick = () => {
 
-        history.push('/allsongs');
+        history.push('/songs');
   };
 
   const handleBottomClick = () => {
-    history.push('/genre');
+    history.push('/moods');
   };
 
   return (
@@ -49,7 +49,7 @@ function BasicMenu() {
         }}
       >
         <MenuItem onClick={handleTopClick}>All Songs</MenuItem>
-        <MenuItem onClick={handleBottomClick}>Songs By Genre</MenuItem>
+        <MenuItem onClick={handleBottomClick}>Songs By Mood</MenuItem>
       </Menu>
     </div>
   );

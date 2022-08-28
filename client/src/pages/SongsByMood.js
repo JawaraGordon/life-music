@@ -1,4 +1,7 @@
-import allgenresbanner from '../img/allgenresbanner.png'
+import Box from '@mui/material/Box';
+import BasicMenu from '../components/BasicMenu';
+
+import allmoodsbanner from '../img/allmoodsbanner.png'
 
 function SongsByMood({ songs, user }) {
 
@@ -115,12 +118,18 @@ function SongsByMood({ songs, user }) {
   return (
     <>
     <img
-        src={allgenresbanner}
+        src={allmoodsbanner}
         className="allsongs-img"
         alt="album art"
       />
 
       <div className="songs-container">
+      <Box m={2}>
+          <BasicMenu 
+           variant="contained">
+            Songs
+          </BasicMenu>
+        </Box>
       <h2>Happy Songs</h2>
         {happySongPlayer}
 
