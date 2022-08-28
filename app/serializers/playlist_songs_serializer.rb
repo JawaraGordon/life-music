@@ -5,7 +5,7 @@ class PlaylistSongsSerializer < ActiveModel::Serializer
     has_one :song
   
     def playlist
-      "#{self.object.favorite_song.title} - #{self.object.favorite_song.song_url}"
+      "#{self.object.favorite_song.title} - #{self.object.favorite_song.song_url} - #{self.object.favorite_song.song_id}"
     end
   
   end

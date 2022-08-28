@@ -1,4 +1,5 @@
 class FavoriteSongsController < ApplicationController
+    skip_before_action :authorize, only: [:create, :index, :show]
 
     def create 
      favsong = FavoriteSong.create(favorite_params)
@@ -20,5 +21,4 @@ class FavoriteSongsController < ApplicationController
     def favorite_params
         params.permit(:id, :playlist_id, :song_id)
     end
-
 end

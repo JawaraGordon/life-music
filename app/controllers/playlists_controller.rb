@@ -3,7 +3,7 @@ class PlaylistsController < ApplicationController
     
     def create
         playlist = Playlist.create(playlist_params)
-        # debugger
+
         render json: playlist, status: :created
       end
   
@@ -16,15 +16,12 @@ class PlaylistsController < ApplicationController
         song = Playlist.find(params[:id])
         render json: song, status: :ok
     end
-
-  
   
       def destroy
          playlist = Playlist.find(params[:id])
           playlist.destroy
           head :no_content
       end
-  
     
       private
     

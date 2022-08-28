@@ -24,21 +24,12 @@ function Clock({ songs, setSongList, currentMood, setCurrentMood }) {
 
   // regex to check time
   function checkTime(time) {
-    const regexMorning = /(((0[5-9])|(1[0-2])):([0-5])(0|5)\s(A|)M)/;
-    const regexAfternoon = /(((0[1-9])|(1[0-2])):([0-5])(0|5)\s(A)M)/;
-    const regexEvening = /(((0[1-9])|(1[0-2])):([0-5])(0|5)\s(P)M)/;
-    const regexNight = /(((0[1-9])|(1[0-2])):([0-5])(0|5)\s(P)M)/;
-    const regexLate = /(((0[1-9])|(1[0-2])):([0-5])(0|5)\s(P)M)/;
-    if (time.match(regexMorning)) {
+    const regexAM = /(0?[1-9]|1[0-2]):([0-5]\d)\s?(([Aa])\.?[Mm]\.?)/;
+    const regexPM = /(0?[1-9]|1[0-2]):([0-5]\d)\s?(([Pp])\.?[Mm]\.?)/
+    if (time.match(regexAM)) {
       setCurrentMood(2);
-    } else if (time.match(regexAfternoon)) {
-      setCurrentMood(5);
-    } else if (time.match(regexEvening)) {
+    } else if (time.match(regexPM)) {
       setCurrentMood(3);
-    } else if (time.match(regexNight)) {
-      setCurrentMood(4);
-    } else if (time.match(regexLate)) {
-      setCurrentMood(1);
     }
   }
 

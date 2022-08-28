@@ -405,16 +405,7 @@ figure {
   
 }
 
-#playlist{
-  list-style: none;
-}
-#playlist li a{
-  color:black;
-  text-decoration: none;
-}
-#playlist .current-song a{
-  color:blue;
-}
+
 
 /* @media only screen and (min-width: 1000) {
   .login-container {
@@ -437,7 +428,7 @@ figure {
   }
 } */
 
-@media(max-width: 766px) {
+@media(max-width: 600px) {
 
   .mobile {
     display: flex;

@@ -1,5 +1,5 @@
-import React, { useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
@@ -16,7 +16,7 @@ function SignUpForm({ setUser }) {
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const history = useHistory()
+  const history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -39,7 +39,7 @@ function SignUpForm({ setUser }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => setUser(user));
-        history.push('/music');
+        history.push('/about');
       } else {
         r.json().then((err) => setErrors(err.errors));
         setTimeout(() => setErrors([]), 3000);
@@ -127,7 +127,8 @@ function SignUpForm({ setUser }) {
                 required
                 type="number"
                 id="age"
-                min="13" max="115"
+                min="13"
+                max="115"
                 value={age}
                 onChange={(e) => setAge(Number(e.target.value))}
               />

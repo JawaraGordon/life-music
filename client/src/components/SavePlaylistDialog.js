@@ -21,8 +21,6 @@ function SavePlaylistDialog({ savePlayList }) {
     setOpen(false);
   };
 
-  // console.log("Save Playlist dialog", randomSongs)
-
   return (
     <div>
       <Button

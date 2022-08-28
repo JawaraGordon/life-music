@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index, :destroy]
+    skip_before_action :authorize, only: [:create, :index, :destroy, :playists]
 
     def create
       user = User.create!(user_params)
