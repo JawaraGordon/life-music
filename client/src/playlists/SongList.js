@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
-import React, { useEffect, useState } from 'react';
 import SavePlaylistDialog from '../components/SavePlaylistDialog'
+import BasicMenu from '../components/BasicMenu';
 
 function SongList({ songs, user }) {
 
@@ -85,6 +85,13 @@ return ("")
       <img src={songImg[0]} className="song-img" alt="album art"/>
 
       <div className="song-container">
+    <Box m={2}>
+          <BasicMenu 
+          savePlayList={savePlayList}
+           variant="contained">
+            Save
+          </BasicMenu>
+        </Box>
         {songPlayer} 
         <Box m={2}>
           <SavePlaylistDialog 
@@ -93,6 +100,7 @@ return ("")
             Save
           </SavePlaylistDialog>
         </Box>
+        <br></br>
       </div>
     </>
   );

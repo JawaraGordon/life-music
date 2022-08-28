@@ -1,9 +1,6 @@
-import { Container } from '@mui/system';
-import Box from '@mui/material/Box';
-import React, { useEffect, useState } from 'react';
 import SongList from '../playlists/SongList';
 
-function Music({ user, isShown, songList, setSongs, addPlaylistToUser }) {
+function Music({ user, songList, setSongs, addPlaylistToUser }) {
   const { username, image_url, bio, age, location } = user;
 
   return (
@@ -27,8 +24,6 @@ function Music({ user, isShown, songList, setSongs, addPlaylistToUser }) {
           user={user} 
           addPlaylistToUser={addPlaylistToUser}/>
         </div>
-        {/* {!isShown ? null : (
-        )} */}
       </div>
     </>
   );
