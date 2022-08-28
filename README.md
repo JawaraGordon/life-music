@@ -23,7 +23,11 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 - Learning to use the React Material UI library. 
 
 - In the future I want to add:
-  - 
+  - Advanced audio player with autoplay and     playlist features
+  - Allow users to add their own music
+  - Playlist editing capabilities
+  - Auto-generated playlists by geo-location 
+  - Ability to rate songs
 
 ### Project Repo
 
@@ -43,9 +47,11 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 - View your saved playlists from the MyPlaylists navbar tab 
 
-- Get more information about Activities by clicking on the individually named Activity buttons
+- Press the "SONGS" button in the Music tab to navigate to a page the displays all of the songs in the database at once or choose to see all of the songs categorized by mood.
 
-- Each Activity button will navigate to a new component screen. You can click the "learn more" button to go to an external link about the topic. Check the checkbox to save your progress to the database as completed. Click the "home" button to go back to the main page.
+- Press the "Time Hop" button next to the clock at the top of the screen to generate a random list of songs based on the current time of day. 
+
+- Pressing the logo in the top left corner will take you to the current user's profile view. 
 
 ## Setup
 
