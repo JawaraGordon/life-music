@@ -52,8 +52,11 @@ function SongList({ songs, user }) {
 
   return (
     <>
-      <img src={songImg[0]} className="song-img" alt="album art"/>
-
+    <div className="songimg-container">
+      {/* <img src={songImg[0]} className="song-img" alt="album art"/> */}
+      </div>
+      <br></br>
+      
       <div className="songs-container">
     <Box m={2}>
           <BasicMenu 

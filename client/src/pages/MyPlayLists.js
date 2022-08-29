@@ -57,6 +57,11 @@ return (<h2 className="playlists-container">Save a Playlist...</h2>)
                   })}
                    <Box m={2}>
           <Button 
+          style={{
+            backgroundColor: "#0bff99",
+            color: "#000",
+            fontWeight: "bold"
+        }}
             className="header-btn"
             variant="contained"
             color="primary"

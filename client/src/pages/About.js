@@ -13,6 +13,7 @@ function About({songs}) {
         Instructions
       </AboutDialog>
       </div>
+      <br></br>
     <div className="about-img">
         <img src={LifeMusicAbout} alt="about" />
 

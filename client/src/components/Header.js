@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
 import LifeMusicLogo from '../img/LifeMusicLogo.png';
 import Clock from './Clock';
 
@@ -22,6 +23,7 @@ function Header({ setUser, songs, setSongList, currentMood, setCurrentMood }) {
         <a className="header-img" href="/music">
           <img src={LifeMusicLogo} alt="logo" />
         </a>
+        <br></br>
 
         <Clock
           songs={songs}
@@ -29,10 +31,19 @@ function Header({ setUser, songs, setSongList, currentMood, setCurrentMood }) {
           currentMood={currentMood}
           setCurrentMood={setCurrentMood}
         />
-
-        <button onClick={handleLogoutClick} className="header-btn">
+      <br></br>
+        <Button 
+        className="header-btn"
+        onClick={handleLogoutClick} 
+        variant="contained"
+        style={{
+          backgroundColor: "#0bff99",
+          color: "#000",
+          fontWeight:`bold`,
+      }}
+        >
           Logout
-        </button>
+        </Button>
       </div>
     </>
   );

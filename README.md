@@ -35,19 +35,25 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 # Navigating the application
 
-- Create a new user or login with an existing account
+- Create a new user or login with an existing account.
 
-- Logout with the top-right navbar button
+- Logout with the top-right navbar button.
 
-- Learn how to use the app from the About navbar tab
+- Edit or Delete your User profile from the Account navbar tab.
 
-- Edit or Delete your User profile from the Account navbar tab
+- Learn how to use the app from the About section instructions button.
 
-- Use the Music navbar tab to display song playlists. Choose a mood from the mood-bar to generate a random list of songs from the database. A new list of songs will be generated each time the mood-bar is pressed. Save a playlist with the "save" button at the bottom of the playlist.
+- Press the Music button.
 
-- View your saved playlists from the Playlists navbar tab
+- Choose a Mood from the Mood-bar to generate a random list of songs with that vibe.
 
-- Press the "SONGS" button in the Music tab to navigate to a page that displays all of the songs in the database at once or choose to see all of the songs categorized by mood.
+- A new list of songs will be generated each time a Mood is pressed.
+
+- Save the list of songs with the "save" button at the bottom of the playlist.
+
+- View your saved playlists with the Playlists button.
+
+- Press the Songs button at the top of the Music playlist to navigate to a page that displays all of the songs in the database at once or choose to see all of the songs categorized by mood.
 
 - While on the music tab, press the "Time Hop" button next to the clock at the top of the screen to generate a random list of songs based on the current time of day.
 
@@ -63,6 +69,7 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 ├── index.css
 ├── index.js
 └── components/
+    ├── AboutDialog.js
     ├── AccountCard.js
     ├── App.js
     ├── BasicMenu.js
