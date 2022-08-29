@@ -59,6 +59,7 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 ```txt
 ../src/
+├── App.css
 ├── index.css
 ├── index.js
 └── components/
