@@ -19,7 +19,7 @@ function MoodBar({
           variant="contained"
           color="secondary"
         >
-          <h3>Happy</h3>
+          <h3 className="mood-tag">Happy</h3>
         </Button>
         <Button
           onClick={handleEnergizedClick}
