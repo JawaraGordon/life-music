@@ -11,12 +11,10 @@ function DeleteDialog({ user }) {
   const [open, setOpen] = React.useState(false);
 
 
-  // console.log('alert user', user.id);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
-
+  // deletes user, pushes back to login page
   const handleDelete = () => {
     fetch(`users/${user.id}`, {
       method: 'DELETE',

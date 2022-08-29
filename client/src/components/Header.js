@@ -6,6 +6,7 @@ import Clock from './Clock';
 function Header({ setUser, songs, setSongList, currentMood, setCurrentMood }) {
   const history = useHistory();
 
+  
   function handleLogoutClick() {
     fetch('/logout', { method: 'DELETE' }).then((r) => {
       if (r.ok) {

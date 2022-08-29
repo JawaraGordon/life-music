@@ -1,9 +1,8 @@
 import Box from '@mui/material/Box';
 import BasicMenu from '../components/BasicMenu';
-
 import allmoodsbanner from '../img/allmoodsbanner.png'
 
-function SongsByMood({ songs, user }) {
+function SongsByMood({ songs }) {
 
   //happy Songs Filter
     const happySongs = songs.filter((s) => (
@@ -30,8 +29,6 @@ function SongsByMood({ songs, user }) {
     s.mood_rank === 4
   ));     
 
-
-  
  //happy Songs player
     const happySongPlayer = happySongs
     .map((s) => (

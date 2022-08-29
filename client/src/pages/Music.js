@@ -3,6 +3,7 @@ import SongList from '../playlists/SongList';
 function Music({ user, songList, setSongs, addPlaylistToUser }) {
   const { username, image_url, bio, age, location } = user;
 
+
   return (
     <>
       <div className="home-container">

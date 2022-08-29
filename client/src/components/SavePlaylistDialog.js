@@ -16,6 +16,7 @@ function SavePlaylistDialog({ savePlayList }) {
     setOpen(true);
   };
 
+  // saves playlist 
   const handleClose = () => {
     savePlayList()
     setOpen(false);

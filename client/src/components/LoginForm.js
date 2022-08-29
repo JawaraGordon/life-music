@@ -9,7 +9,6 @@ function LoginForm({ setUser }) {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
-
   const history = useHistory();
 
   function handleSubmit(e) {

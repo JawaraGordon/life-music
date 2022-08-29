@@ -37,17 +37,6 @@ function SongList({ songs, user }) {
   // function to POST playlist from onClick 
   const savePlayList = () => {
 
-    // function to POST favorite_songs
-    function saveFaveSong(songObj) {
-      fetch('/favorite_songs', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(songObj),
-      });
-    };
     fetch('/playlists', {
       method: 'POST',
       headers: {
@@ -59,7 +48,7 @@ function SongList({ songs, user }) {
     })
     .then((resp) => resp.json())
     .then (playlist => {
-      
+      console.log("playlist fetch", playlist)
 
       randomSongs.map((song) => 
       saveFaveSong({
@@ -67,6 +56,18 @@ function SongList({ songs, user }) {
         playlist_id: playlist.id,
       }
       ))})
+
+       // function to POST favorite_songs
+    function saveFaveSong(songObj) {
+      fetch('/favorite_songs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(songObj),
+      });
+    };
       
     };
     

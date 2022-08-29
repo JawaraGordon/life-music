@@ -12,7 +12,6 @@ import AllSongs from '../pages/AllSongs';
 import SongsByGenre from '../pages/SongsByMood';
 
 function App() {
-  // add state for songs player
   const [songs, setSongs] = useState([]);
   const [user, setUser] = useState(null);
   const [isShown, setIsShown] = useState(false);
@@ -28,7 +27,6 @@ function App() {
     });
   }, []);
 
-  // console.log("app",user.playlists);
   // fetch all songs
   useEffect(() => {
     fetch('/songs').then((resp) => {
@@ -45,9 +43,6 @@ function App() {
     setUser((prevUser) => ({...prevUser, "playlists": [...prevUser.playlists,newPlaylist]}))
 
   }
-  // console.log('App songs', songs);
-  // console.log('App user', user);
-
   const handleChillClick = () => {
     // setCurrentMood(() => 2);
 

@@ -9,7 +9,6 @@ function Login({ setUser }) {
 
   return (
     <>
-      
       {showLogin ? (
         <>
           <LoginForm setUser={setUser} />

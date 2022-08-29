@@ -7,8 +7,6 @@ import React, { useEffect, useState } from 'react';
 function MyPlayLists({user}) {
   const [userPlaylists, setUserPlaylists] = useState([]);
 
-  // console.log("MyPlaylists fetch return", userPlaylists)
-
   //fetch all playlists 
   useEffect(() => {
     fetch(`/users/${user.id}/playlists/`).then((resp) => {
@@ -34,8 +32,6 @@ const deletePlayList = (id) => {
 
 if (!userPlaylists.length || !userPlaylists) 
 return (<h2 className="playlists-container">Save a Playlist...</h2>)
-
-  // console.log("Myplaylists", userPlaylists)
 
   return (
     <>

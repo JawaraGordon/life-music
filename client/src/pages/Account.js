@@ -14,9 +14,9 @@ function Account({ user, setUser }) {
     age: '',
   });
   
-  // console.log("account user", user.id);
   const history = useHistory();
 
+  //fetch the current user by id
   useEffect(() => {
     fetch(`/users/${user.id}`)
       .then((resp) => resp.json())
@@ -62,7 +62,7 @@ function Account({ user, setUser }) {
     window.location.reload();
   };
 
-  //refactored into mui alertdialog 
+  //refactored into mui alertdialog - check MUI browser compatibility 
   function confirmAction() {
     let confirmAction = window.confirm('Are you sure?');
     if (confirmAction) {
@@ -73,6 +73,7 @@ function Account({ user, setUser }) {
     }
   }
 
+  // push back to music component
   function goBack() {
     history.push('/music');
   }

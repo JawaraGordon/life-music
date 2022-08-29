@@ -7,7 +7,7 @@ function Clock({ songs, setSongList, currentMood, setCurrentMood }) {
   const [date, setDate] = useState(new Date());
 
   
-
+// create localtime variable 
   const localTime = date.toLocaleTimeString([], {
     hour: '2-digit',
     minute: '2-digit',
@@ -20,7 +20,7 @@ function Clock({ songs, setSongList, currentMood, setCurrentMood }) {
       (song) => song.mood_rank === currentMood
     );
     setSongList(filteredSongs);
-    // setIsShown((currentState) => !currentState);
+    
   };
 
   // regex to check time
@@ -33,9 +33,6 @@ function Clock({ songs, setSongList, currentMood, setCurrentMood }) {
       setCurrentMood(3);
     }
   }
-
-  // console.log(localTime)
-  // console.log("clock", handleClockClick())
 
   //  fetch time
   useEffect(() => {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
 import LifeMusicLogo from '../img/LifeMusicLogo.png';

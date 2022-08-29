@@ -6,7 +6,11 @@ function MoodBar({
   handleChillClick,
   handleEnergizedClick,
   handleFocusedClick,
-}) {
+}) 
+
+// ^^^ try to DRY up with useRef
+
+{
   return (
     <>
       <div className="mood-bar">

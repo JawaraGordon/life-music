@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import BasicMenu from '../components/BasicMenu';
 import allsongsbanner from '../img/allsongsbanner.png';
 
-function AllSongs({ songs, user }) {
+function AllSongs({ songs}) {
   const songPlayer = songs
     .sort((a, b) => a.id - b.id)
     .map((s) => (

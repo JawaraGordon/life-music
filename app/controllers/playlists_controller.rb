@@ -26,7 +26,7 @@ class PlaylistsController < ApplicationController
       private
     
       def playlist_params
-        params.permit(:id, :name, :image_url, :mood_rank, :user_id)
+        params.permit(:id, :album_img, :artist, :bpm, :favorite_songs, :key_of_song, :length, :title, :song_url, :mood_rank, :user_id)
       end
 
 end

@@ -17,11 +17,13 @@ function BasicMenu() {
     setAnchorEl(null);
   };
 
+  // pushes to AllSongs page
   const handleTopClick = () => {
 
         history.push('/songs');
   };
 
+  // pushes to SongsByMood page
   const handleBottomClick = () => {
     history.push('/moods');
   };

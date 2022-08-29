@@ -18,9 +18,10 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 - Client-side routing that works in unison with server side custom routes.
 
-- Authentication/authorization using a session hash to allow user login status to persist. Using the Bcrypt gem to generate salted password hashes stored on a password_digest data table.
+- Authentication/authorization using a session hash to allow user playlists  to persist. 
 
 - Learning to use the React Material UI library. 
+
 
 - In the future I want to add:
   - Advanced audio player with autoplay and     playlist features
@@ -64,6 +65,7 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 └── components/
     ├── AccountCard.js
     ├── App.js
+    ├── BasicMenu.js
     ├── Clock.js
     ├── DeleteDialog.js
     ├── Header.js
@@ -76,8 +78,10 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 └── pages/
     ├── About.js
     ├── Account.js
+    ├── AllSongs.js
     ├── Music.js
-    └── MyPlaylists.js
+    ├── MyPlaylists.js
+    └── SongsByMood.js
 └── playlists/
     └── SongList.js
 └── styles/
@@ -303,3 +307,6 @@ $ git config --list --local | grep heroku
 ```
 heroku local -f Procfile.dev
 ```
+
+## License
+- MIT
