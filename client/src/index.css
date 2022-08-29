@@ -539,7 +539,17 @@ figure {
   padding-right: 5rem;
 }
 
-  }
+.allsongs-img{
+  margin-top: 0;
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+ 
+}
+
+  
 
 
 @media(max-width: 600px) {

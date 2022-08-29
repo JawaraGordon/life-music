@@ -23,8 +23,9 @@ function AllSongs({ songs}) {
 
   return (
     <>
+    <div className="songs-container">
       <img src={allsongsbanner} className="allsongs-img" alt="album art" />
-
+      </div>
       <div className="songs-container">
         <Box m={2}>
           <BasicMenu variant="contained">Songs</BasicMenu>

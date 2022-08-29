@@ -114,12 +114,13 @@ function SongsByMood({ songs }) {
 
   return (
     <>
+    <div className="songs-container">
     <img
         src={allmoodsbanner}
         className="allsongs-img"
         alt="album art"
       />
-
+</div>
       <div className="songs-container">
       <Box m={2}>
           <BasicMenu 
