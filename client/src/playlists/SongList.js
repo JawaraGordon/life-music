@@ -4,7 +4,6 @@ import BasicMenu from '../components/BasicMenu';
 
 function SongList({ songs, user }) {
 
-  // console.log("All songs state", songs.map((s) => s.favorite_songs))
   // randomly sort array of songs
   const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4);
 
@@ -33,7 +32,6 @@ function SongList({ songs, user }) {
     return song.album_img;
   });
 
-  
   // function to POST playlist from onClick 
   const savePlayList = () => {
 
@@ -44,42 +42,13 @@ function SongList({ songs, user }) {
         Accept: 'application/json',
       },
       body: JSON.stringify({
-        user_id: user.id}),
+        user_id: user.id,
+        random_songs: randomSongs}),
     })
-    .then((resp) => resp.json())
-    .then (playlist => {
-      console.log("playlist fetch", playlist)
-
-      randomSongs.map((song) => 
-      saveFaveSong({
-        song_id: song.id,
-        playlist_id: playlist.id,
-      }
-      ))})
-
-       // function to POST favorite_songs
-    function saveFaveSong(songObj) {
-      fetch('/favorite_songs', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(songObj),
-      });
-    };
       
     };
-    
-// console.log("Songlist save playlist after function", randomSongs)
-// console.log("Songlist save playlist", playlist)
-// console.log("Songlist save playlist before function", randomSongs)
-// console.log('randomsong data', randomSongData);
-// console.log('Songlist user', user);
-// console.log("songlist PL DATA", playListData)
 
-  if (!songPlayer.length ) 
-return ("")
+  if (!songPlayer.length ) return 
 
   return (
     <>

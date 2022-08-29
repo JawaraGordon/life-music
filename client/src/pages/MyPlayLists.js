@@ -13,8 +13,7 @@ function MyPlayLists({user}) {
       if (resp.ok) {
         resp.json().then((playlists) => {
           
-          console.log("fetch return" , playlists)
-          setUserPlaylists(playlists.sort(function(a, b){return b-a}))
+          setUserPlaylists(playlists)
         
         })}
     });

@@ -2,8 +2,10 @@ class PlaylistsController < ApplicationController
     skip_before_action :authorize, only: [:create, :index, :show, :playlist]
     
     def create
-        playlist = Playlist.create(playlist_params)
-
+        playlist = Playlist.create!(playlist_params)
+        params[:random_songs].map do | fav_song |
+          FavoriteSong.create({playlist_id: playlist.id, song_id: fav_song[:id]})
+        end
         render json: playlist, status: :created
       end
   
@@ -26,7 +28,7 @@ class PlaylistsController < ApplicationController
       private
     
       def playlist_params
-        params.permit(:id, :album_img, :artist, :bpm, :favorite_songs, :key_of_song, :length, :title, :song_url, :mood_rank, :user_id)
+        params.permit(:id, :user_id, :random_songs)
       end
 
 end
