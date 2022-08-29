@@ -2,7 +2,7 @@
 
 # Life Music
 
-Mood-Generated Soundtracks 
+Mood-Generated Soundtracks
 
 Create a profile, Pick your mood, Listen to music, Live your life
 
@@ -12,22 +12,21 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 ## Challenges
 
-- Creating custom serializers to display user view data. 
+- Creating custom serializers to display user view data.
 
 - Integrating MUI dialog boxes.
 
 - Client-side routing that works in unison with server side custom routes.
 
-- Authentication/authorization using a session hash to allow user playlists  to persist. 
+- Authentication/authorization using a session hash to allow user playlists to persist.
 
-- Learning to use the React Material UI library. 
-
+- Learning to use the React Material UI library.
 
 - In the future I want to add:
-  - Advanced audio player with autoplay and     playlist features
+  - Advanced audio player with autoplay and playlist features
   - Allow users to add their own music
   - Playlist editing capabilities
-  - Auto-generated playlists by geo-location 
+  - Auto-generated playlists by geo-location
   - Ability to rate songs
 
 ### Project Repo
@@ -44,15 +43,15 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 - Edit or Delete your User profile from the Account navbar tab
 
-- Use the Music navbar tab to display song playlists. Choose a mood from the mood-bar to generate a random list of songs from the database. A new list of songs will be generated each time the mood-bar is pressed. Save a playlist with the "save" button at the bottom of the playlist. 
+- Use the Music navbar tab to display song playlists. Choose a mood from the mood-bar to generate a random list of songs from the database. A new list of songs will be generated each time the mood-bar is pressed. Save a playlist with the "save" button at the bottom of the playlist.
 
-- View your saved playlists from the MyPlaylists navbar tab 
+- View your saved playlists from the Playlists navbar tab
 
-- Press the "SONGS" button in the Music tab to navigate to a page the displays all of the songs in the database at once or choose to see all of the songs categorized by mood.
+- Press the "SONGS" button in the Music tab to navigate to a page that displays all of the songs in the database at once or choose to see all of the songs categorized by mood.
 
-- Press the "Time Hop" button next to the clock at the top of the screen to generate a random list of songs based on the current time of day. 
+- While on the music tab, press the "Time Hop" button next to the clock at the top of the screen to generate a random list of songs based on the current time of day.
 
-- Pressing the logo in the top left corner will take you to the current user's profile view. 
+- Pressing the logo in the top left corner will take you to the current user's profile view.
 
 ## Setup
 
@@ -105,32 +104,37 @@ Imports `BrowserRouter` component from React Router, wraps `App` as the top leve
 [network tab]: https://developer.chrome.com/docs/devtools/network/
 
 ### React version
-  - 18.2.0
+
+- 18.2.0
 
 ### Ruby version
-  - 3.1.2
+
+- 3.1.2
 
 ### Rails version
-  - 7.0.3.1
+
+- 7.0.3.1
 
 ### Node version
 
- - v18.7.0
+- v18.7.0
 
 ### Database
-  - (PostgreSQL) 14.4
+
+- (PostgreSQL) 14.4
 
 ## System dependencies
 
-* Homebrew
-* npm
-* rvm
+- Homebrew
+- npm
+- rvm
 
-- macOS 10+
+* macOS 10+
 
-- Windows 10+
+* Windows 10+
 
 ### Project dependencies
+
 ```
   emotion/react": "^11.10.0",
   emotion/styled": "^11.10.0",
@@ -309,4 +313,5 @@ heroku local -f Procfile.dev
 ```
 
 ## License
+
 - MIT
