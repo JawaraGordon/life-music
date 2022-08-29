@@ -288,6 +288,7 @@ button {
   height: 2rem;
   width: max-content;
   margin: .5rem;
+  padding: 2px;
   color: rgb(0, 0, 0);
   font-size: 20px;
   font-weight: 600;
