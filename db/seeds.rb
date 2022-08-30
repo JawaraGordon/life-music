@@ -30,7 +30,8 @@ Song.create(title: "LIES",artist: "DJ Imminent", album_img: "https://source.unsp
 Song.create(title: "If You Want To",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/Tell%20Me%20If%20You%20Want%20To%20.mp3" )
 Song.create(title: "BENZ",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/BENZO.mp3" )
 Song.create(title: "Todos Sentidos",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/De%20Todos%20Sentidos%20%2B%20GTR.mp3" )
-Song.create(title: "MC House",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/MC%20House%20Intro%201%20%5BSlowed%2BExtended%5D.mp3" )
+Song.create(title: "MC House",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/MC%20House%20Intro%201%20%5BSlowed%2BExtended%5D.mp3" )
+Song.create(title: "Spinolin",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?chill", length:231, mood_rank:2, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/chill/Spinolin%20%5BSM%5D.mp3" )
 
 puts 'Seeding Energized Songs...'
 
@@ -62,8 +63,8 @@ Song.create(title: "END ZONE",artist: "DJ Imminent", album_img: "https://source.
 Song.create(title: "GRAB THE LOOT",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?adventure", length:231, mood_rank:3, bpm:150, key_of_song:"Em", song_url:"https://jawaragordon.com/music/energized/GRAB%20THE%20LOOT%20.mp3" )
 Song.create(title: "WEST COASTIN",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?adventure", length:231, mood_rank:3, bpm:150, key_of_song:"Em", song_url:"https://jawaragordon.com/music/energized/West%20Coastin.mp3" )
 Song.create(title: "Microplastics",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?adventure", length:231, mood_rank:3, bpm:150, key_of_song:"Em", song_url:"https://jawaragordon.com/music/energized/MicroplSTICS%20%5BSM%5D.mp3" )
-Song.create(title: "We Like Two",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/energized/We%20Like%20Two.mp3" )
-Song.create(title: "Mirage",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/energized/Mirage%20%28It%27s%20Hidden%29.mp3" )
+Song.create(title: "We Like Two",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:3, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/energized/We%20Like%20Two.mp3" )
+Song.create(title: "Mirage",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:3, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/energized/Mirage%20%28It%27s%20Hidden%29.mp3" )
 
 
 
@@ -138,13 +139,13 @@ Song.create(title: "Skylines",artist: "DJ Imminent", album_img: "https://source.
 
 Song.create(title: "Jazzland",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Jazzland.mp3" )
 Song.create(title: "Be Alright",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/be%20alright%202.mp3" )
-Song.create(title: "Spinolin",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Spinolin%20%5BSM%5D.mp3" )
+
 Song.create(title: "Reggae Roots",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Roots%20Reggae.mp3" )
 Song.create(title: "Latin Hoops",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Latin%20Hoops.mp3" )
 Song.create(title: "Funky Jam",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Funky%20Background%20Jam.mp3" )
 Song.create(title: "Sweet Like Honey",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Sweet%20Like%20Honey.mp3" )
 Song.create(title: "Pool Party",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Mega%20Mike%20POOL.mp3" )
-Song.create(title: "Pool Party",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Smooth%20Rock.mp3" )
+Song.create(title: "Smooth Rock",artist: "DJ Imminent", album_img: "https://source.unsplash.com/random/?happy", length:231, mood_rank:5, bpm:90, key_of_song:"Em", song_url:"https://jawaragordon.com/music/happy/Smooth%20Rock.mp3" )
 
 
 puts 'Seeding Playlists...'

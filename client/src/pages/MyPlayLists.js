@@ -69,6 +69,7 @@ return (<h2 className="playlists-container">Save a Playlist...</h2>)
             Delete
           </Button>
         </Box>
+
                   <br></br>
                   <div className="playlist-line"></div>
                 </div>

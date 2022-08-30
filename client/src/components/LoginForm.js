@@ -38,7 +38,7 @@ function LoginForm({ setUser }) {
     <>
       <div className="login-container">
         <div className="login-img">
-          <img src={LifeMusicLogin} />
+          <img src={LifeMusicLogin} alt={'logo'}/>
         </div>
         <div className="login-form">
           <form onSubmit={handleSubmit}>
