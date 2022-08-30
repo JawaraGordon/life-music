@@ -35,6 +35,8 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 # Navigating the application
 
+✅ Login as a guest, username: guest pw: 123
+
 🎵 Press the Music button.
 
 ✅ Choose a Mood from the Mood-bar to generate a random list of songs with that vibe.
