@@ -654,22 +654,21 @@ figure {
     font-size: small;
   }
   .profile img{
-    
+    padding-right: 1rem;
     width: 40vw;
     
   }
   .profile h3{
-    visibility: hidden;
+    display:none;
   }
   
   .profile text{
-    visibility: hidden;
+    display:none;
   }
 
   .user-img{
     height: auto;
-    max-width: 30vw;
-  padding: 1rem;
+    max-width: 25vw;
   border-radius: 50px;
     
     

@@ -10,7 +10,7 @@ function Music({ user, songList, setSongs, addPlaylistToUser }) {
         <div className="profile">
           <h1>{username}</h1>
           <div className="profile-img">
-            <img src={image_url} className="user-img" />
+            <img src={image_url} className="user-img" alt="user"/>
           </div>
           <div className="profile-text">
             <h3>Age: {age}</h3>
