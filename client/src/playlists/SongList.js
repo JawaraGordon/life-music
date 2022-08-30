@@ -7,7 +7,6 @@ function SongList({ songs, user }) {
   // randomly sort array of songs
   const randomSongs = songs.sort(() => Math.random() - 0.5).slice(0, 4);
 
-  console.log('songlist randomsongs', randomSongs);
 
   //create song player JSX
   const songPlayer = randomSongs.map((s) => (
@@ -27,10 +26,6 @@ function SongList({ songs, user }) {
         
   ));
 
-  // map song images
-  const songImg = randomSongs.map((song) => {
-    return song.album_img;
-  });
 
   // function to POST playlist from onClick 
   const savePlayList = () => {
@@ -53,7 +48,6 @@ function SongList({ songs, user }) {
   return (
     <>
     <div className="songimg-container">
-      {/* <img src={songImg[0]} className="song-img" alt="album art"/> */}
       </div>
       <br></br>
       

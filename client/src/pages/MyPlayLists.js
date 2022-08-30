@@ -21,7 +21,6 @@ function MyPlayLists({user}) {
 
   
 const deletePlayList = (id) => {
-  console.log("myplaylist id" ,id)
   fetch(`playlists/${id}`, {
     method: 'DELETE',
     headers: { Accept: 'application/json' },
