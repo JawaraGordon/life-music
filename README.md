@@ -35,7 +35,7 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 # Navigating the application
 
-✅ Login as a guest, username: guest pw: 123
+✅ Email me for guest login credentials: jawara@jawaragordon.com
 
 🎵 Press the Music button.
 
