@@ -35,29 +35,21 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 # Navigating the application
 
-- Create a new user or login with an existing account.
+🎵 Press the Music button.
 
-- Logout with the top-right navbar button.
+✅ Choose a Mood from the Mood-bar to generate a random list of songs with that vibe.
 
-- Edit or Delete your User profile from the Account navbar tab.
+✅ A new list of songs will be generated each time a Mood is pressed.
 
-- Learn how to use the app from the About section instructions button.
+✅ Save the list of songs with the "save" button at the bottom of the playlist.
 
-- Press the Music button.
+✅ View your saved playlists with the Playlists button.
 
-- Choose a Mood from the Mood-bar to generate a random list of songs with that vibe.
+✅ Press the Songs button at the top of the playlist to see a page with all of the songs or choose to see all of the songs categorized by mood.
 
-- A new list of songs will be generated each time a Mood is pressed.
+✅ While on the music tab, press the "Time Hop" button next to the clock to generate a random list of songs based on the current time of day.
 
-- Save the list of songs with the "save" button at the bottom of the playlist.
-
-- View your saved playlists with the Playlists button.
-
-- Press the Songs button at the top of the Music playlist to navigate to a page that displays all of the songs in the database at once or choose to see all of the songs categorized by mood.
-
-- While on the music tab, press the "Time Hop" button next to the clock at the top of the screen to generate a random list of songs based on the current time of day.
-
-- Pressing the logo in the top left corner will take you to the current user's profile view.
+✅ Pressing the logo in the top left corner takes you to user's profile view.
 
 ## Setup
 
