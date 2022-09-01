@@ -1,5 +1,7 @@
 import Button from '@mui/material/Button';
 
+
+
 function MoodBar({
   handleHappyClick,
   handleSadClick,
@@ -7,17 +9,19 @@ function MoodBar({
   handleEnergizedClick,
   handleFocusedClick,
 }) 
-
 // ^^^ try to DRY up with useRef
-
 {
+  
+
   return (
     <>
       <div className="mood-bar">
+    
         <Button
           onClick={handleHappyClick}
           variant="contained"
           color="secondary"
+          
         >
           <h3 className="mood-tag">Happy</h3>
         </Button>
@@ -46,9 +50,13 @@ function MoodBar({
         <Button onClick={handleSadClick} variant="contained" color="secondary">
           <h3 className="mood-tag">Intense</h3>
         </Button>
+        
       </div>
     </>
   );
 }
 
+
 export default MoodBar;
+
+
