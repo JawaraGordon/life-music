@@ -14,13 +14,13 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 - Creating custom serializers to display user view data.
 
-- Integrating MUI dialog boxes.
-
 - Client-side routing that works in unison with server side custom routes.
 
 - Authentication/authorization using a session hash to allow user playlists to persist.
 
 - Learning to use the React Material UI library.
+
+- Allowing user playlists to persist
 
 - In the future I want to add:
   - Advanced audio player with autoplay and playlist features
