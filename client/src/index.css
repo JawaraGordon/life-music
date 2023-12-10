@@ -200,8 +200,6 @@ h4{
 
 }
 
-
-
 .nav-btn.active,
 .nav-btn:focus{
   border: 0;
@@ -347,6 +345,7 @@ button {
   text-align: center;
   border-radius: 10px;
 }
+
 .profile-img{
   border-radius: 50%;
   width: 100%;
@@ -422,11 +421,18 @@ button {
 
 }
 
+.songimg-container img{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 50px;
+  margin-top: 2rem;
+}
+
 .songs-container {
   display: grid;
   justify-content: center;
   background-color: #000;
-  padding: 1rem;
   
 }
 
