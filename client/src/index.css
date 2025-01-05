@@ -411,6 +411,17 @@ button {
  
 }
 
+.playlist-view ul {
+  list-style-type: none;
+  padding: 0;
+  color: #0bff99;
+}
+
+.playlist-view li {
+  margin: 5px 0;
+  color: #0bff99;
+}
+
 .song-container {
   display: flex;
   flex-wrap: wrap;
